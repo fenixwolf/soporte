@@ -49,8 +49,8 @@ $active_group = 'default';
 $active_record = TRUE;
 
 $db['default']['hostname'] = 'localhost';
-$db['default']['username'] = 'postgres';
-$db['default']['password'] = 'barcelona';
+$db['default']['username'] = 'soporte';
+$db['default']['password'] = 'soporteinn';
 $db['default']['database'] = 'soporte';
 $db['default']['dbdriver'] = 'postgre';
 $db['default']['dbprefix'] = '';

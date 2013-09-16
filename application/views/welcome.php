@@ -11,12 +11,7 @@
 	<link rel="stylesheet" href="<?=base_url()?>dist/css/font-awesome.min.css">
 	<script src="<?=base_url()?>dist/js/jquery-2.0.3.min.js"></script>
 </head>
-<?php 
-	foreach ($tecnicos_resultado as $key => $tecnicos) {
-		$admin=$tecnicos['administracion'];
-		
-		
-	}?>
+
 <body>
 <div class="row">
 	<div class="col-md-12" id='header'>
