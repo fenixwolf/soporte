@@ -33,6 +33,10 @@
 			$dropdown_incidencias[$arrayincidencias['id']] = $arrayincidencias['tipo_incidencia'];
 			
 			};
+			foreach ($lista_departamentos as $indice=>$arraydepartamento) {
+			$dropdown_departamento[$arraydepartamento['id']] = $arraydepartamento['nombre_departamento'];
+			
+			};
 		
 
 			
@@ -48,6 +52,10 @@
 			echo $div_class;
 			echo form_label('Correo Electrónico del Solicitante: ', "correo_solicitante");
 			echo form_input("correo_solicitante");
+			echo $div_close;
+			echo $div_class;
+			echo form_label('Departamento: ',"departamento");
+			echo form_dropdown('departamento', $dropdown_departamento);
 			echo $div_close;
 			echo $div_class;
 			echo form_label('Detalles de la Incidencia: ',"detalles");

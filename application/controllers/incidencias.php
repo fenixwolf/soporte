@@ -6,6 +6,7 @@ class Incidencias extends CI_Controller {
 		parent::__construct();
 		$this->load->model('incidencias_m');
 		$this->load->model('tecnicos_m');
+		$this->load->model('departamentos_m');
 	}
 	
 	public function index(){
@@ -18,6 +19,7 @@ class Incidencias extends CI_Controller {
 			'carga_exitosa' => '',
 			'lista_tecnicos'=>$this->tecnicos_m->listar_tecnicos(),
 			"lista_incidencias"=>$this->incidencias_m->listar_incidencias(),
+			"lista_departamentos"=>$this->departamentos_m->listar_departamentos(),
 			 );
 		//echo '<pre>',print_r($data),'</pre>';die;	
 		//$data['tecnicos']=$this->tecnicos_m->lista_roles();
@@ -33,6 +35,7 @@ class Incidencias extends CI_Controller {
 		'detalles' =>$this->input->post("detalles"),
 		'tecnico_asignado' =>$this->input->post("tecnico_asignado"),
 		'tipo_incidencia' =>$this->input->post("tipo_incidencia"),
+		'id_departamento_incidencia' =>$this->input->post("departamento"),
 
 
 		);
@@ -59,6 +62,7 @@ class Incidencias extends CI_Controller {
 			'carga_exitosa' => '',
 			'lista_tecnicos'=>$this->tecnicos_m->listar_tecnicos(),
 			"lista_incidencias"=>$this->incidencias_m->listar_incidencias(),
+			"lista_departamentos"=>$this->departamentos_m->listar_departamentos(),
 			"carga_exitosa"=>$exito,
 			 );
 		//$data['tecnicos']=$this->tecnicos_m->lista_roles();
