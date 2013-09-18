@@ -6,6 +6,7 @@ class Tecnicos_m extends CI_Model {
 	public function buscartecnico(){		
         $this->db->select('correo_tecnico , administracion');
         $this->db->from('tecnicos_t');
+        $this->db->where('id', $Value);
         $index_tecnicos = $this->db->get(); //Obtengo los datos de la consulta
         $tecnicos = $index_tecnicos->result_array(); //Con "result_array" lo transformo en array
         return $tecnicos; //Envío los datos de la consulta
@@ -34,7 +35,31 @@ class Tecnicos_m extends CI_Model {
         $tecnicos = $index_tecnicos->result_array(); //Con "result_array" lo transformo en array
         return $tecnicos; //Envío los datos de la consulta
         //echo '<pre>',print_r($tecnicos),'</pre>';die;
-     }       
+     }
+     public function busqueda_tecnico_asignado($data){
+        $id_tecnico=$data["tecnico_asignado"];
+        $this->db->select('id , nombres_tecnico, apellidos_tecnico');
+        $this->db->from('public.tecnicos_t');
+        $this->db->where('id =',$id_tecnico);
+        $this->db->limit(1);
+        $index_tecnicos = $this->db->get(); //Obtengo los datos de la consulta
+        $tecnicos = $index_tecnicos->row_array(); //Con "result_array" lo transformo en array
+        return $tecnicos; //Envío los datos de la consulta
+        //echo '<pre>',print_r($tecnicos),'</pre>';die;
+  
+     }
+     public function busqueda_departamento($data){
+        $id_tecnico=$data["lista_departamentos"];
+        $this->db->select('id , nombre_departamento, detalles, direccion_departamento');
+        $this->db->from('public.departamento_t');
+        $this->db->where('id =',$id_tecnico);
+        $this->db->limit(1);
+        $index_tecnicos = $this->db->get(); //Obtengo los datos de la consulta
+        $departamentos = $index_tecnicos->row_array(); //Con "result_array" lo transformo en array
+        return $departamentos; //Envío los datos de la consulta
+        //echo '<pre>',print_r($tecnicos),'</pre>';die;
+  
+     }                  
 	
 
 }

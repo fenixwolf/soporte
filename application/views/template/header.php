@@ -12,9 +12,9 @@
 		<nav class="navbar default" role="navigation">
 	<a class="navbar-brand" href=<?=base_url()?>>SGI</a>
 	<ul class="nav navbar-nav">
-		 <li><a href=<?=base_url()."tecnicos";?>>Técnicos</a></li>
-		 <li><a href=<?=base_url()."roles";?>>Roles</a></li>
-		 <li><a href=<?=base_url()."incidencias";?>>Incidencias</a></li>
+		 <li ><a href=<?=base_url()."tecnicos";?>>Técnicos</a></li>
+		 <!--<li><a href=<?=base_url()."roles";?>>Roles</a></li>-->
+		 <li ><a href=<?=base_url()."incidencias";?>>Incidencias</a></li>
 	</ul>
 </nav>
 	</div>

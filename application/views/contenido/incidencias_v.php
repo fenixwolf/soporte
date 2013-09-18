@@ -1,5 +1,5 @@
 <div class="row">
-		<div class="col-md-9 col-md-offset-1">
+		<div class="col-md-10 col-md-offset-1">
 			<?php 
 			/**/
 			
@@ -22,20 +22,20 @@
 				"value"=>$hora_exacta, 
 
 				);
-			/**Función para Dropdown----> Lsitado a partir de consulta query**/
+		
 			/**Función para Dropdown----> Lsitado a partir de consulta query**/
 			foreach ($lista_tecnicos as $indice=>$arraytecnico) {
 			$dropdown_tecnico[$arraytecnico['id']] = $arraytecnico['nombres_tecnico']." ".$arraytecnico['apellidos_tecnico'];
 			//echo '<pre>',print_r($dropdown_tecnico),'</pre>';die;
 			// Creación de una arreglo a partir de los datos traído para el dropdown!!
 			};
+
 			foreach ($lista_incidencias as $indice=>$arrayincidencias) {
 			$dropdown_incidencias[$arrayincidencias['id']] = $arrayincidencias['tipo_incidencia'];
-			
 			};
+
 			foreach ($lista_departamentos as $indice=>$arraydepartamento) {
 			$dropdown_departamento[$arraydepartamento['id']] = $arraydepartamento['nombre_departamento'];
-			
 			};
 		
 
