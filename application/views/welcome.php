@@ -10,8 +10,25 @@
 	<link rel="stylesheet" href="<?=base_url()?>dist/css/bootstrap-theme.css" media="screen">
 	<link rel="stylesheet" href="<?=base_url()?>dist/css/font-awesome.min.css">
 	<script src="<?=base_url()?>dist/js/jquery-2.0.3.min.js"></script>
+	<script src="<?=base_url()?>dist/js/fechajquery.js"></script>
+	<script type="text/javascript">
+	$(document).ready(function() {
+    setTimeout(function() {
+        $("#alerta").fadeOut(500);
+    	},1500);
+    jQuery(function($){
+   $("#fecha").mask("99-99-9999");
+   //$('#monto').mask('99999,99');
+  	});
+});
+</script>
 </head>
-
+<?php 
+if (@$carga_exitosa=="si") {
+	$carga_exito='<div class="alert alert-success" id="alerta" >Datos guardados con <b>Éxito<b></div>';	
+				
+			}
+ ?>
 <body>
 <div class="row">
 	<div class="col-md-12" id='header'>
@@ -28,6 +45,6 @@
 		<?php $this->load->view('template/footer'); ?>
 	</div>
 </div>
-
+<?php echo @$carga_exito ?>
 </body>
 </html>
