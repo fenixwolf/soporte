@@ -27,7 +27,7 @@
 			echo $div_close;
 
 			echo $div_class;
-			echo form_label('Simplicado: ', 'rol_simple');
+			echo form_label('Simplificado: ', 'rol_simple');
 			echo form_input('rol_simple');
 			echo $div_close;
 
