@@ -26,17 +26,19 @@
 <?php 
 if (@$carga_exitosa=="si") {
 	$carga_exito='<div class="alert alert-success" id="alerta" >Datos guardados con <b>Éxito<b></div>';	
-				
-			}
+}
+
  ?>
 <body>
 <div class="row">
 	<div class="col-md-12" id='header'>
+		
 		<?php $this->load->view('template/header'); ?>
 	</div>
 </div>	
 <div class="row">
 	<div class="col-md-12">
+		<?php echo @$carga_exito ?>
 		<?php $this->load->view('template/article'); ?>
 	</div>
 </div>
@@ -45,6 +47,6 @@ if (@$carga_exitosa=="si") {
 		<?php $this->load->view('template/footer'); ?>
 	</div>
 </div>
-<?php echo @$carga_exito ?>
+
 </body>
 </html>

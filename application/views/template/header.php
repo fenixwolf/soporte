@@ -8,6 +8,7 @@
 </header>
 <div class="row">
 	<div class="col-md-10 col-md-offset-1">
+		
 		<nav class="navbar default" role="navigation">
 	<a class="navbar-brand" href=<?=base_url()?>>SGI</a>
 	<ul class="nav navbar-nav">
