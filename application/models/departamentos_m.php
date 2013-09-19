@@ -9,6 +9,7 @@ class Departamentos_m extends CI_Model {
         return $departamentos; //Envío los datos de la consulta
         //echo '<pre>',print_r($tecnicos),'</pre>';die;
      }
+     
     public function registrar_departamento($data)
 	{
 	
