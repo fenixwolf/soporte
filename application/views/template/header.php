@@ -16,6 +16,7 @@
 		 <li ><a href=<?=base_url()."departamentos";?>>Departamentos u Oficinas</a></li>
 		 <!--<li><a href=<?=base_url()."roles";?>>Roles</a></li>-->
 		 <li ><a href=<?=base_url()."incidencias";?>>Incidencias</a></li>
+		 <li ><a href=<?=base_url()."estadisticas";?>>Estadisticas</a></li>
 	</ul>
 </nav>
 	</div>
