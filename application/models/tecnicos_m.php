@@ -49,14 +49,27 @@ class Tecnicos_m extends CI_Model {
   
      }
      public function busqueda_departamento($data){
-        $id_tecnico=$data["lista_departamentos"];
+        $id_tecnico=$data["id_departamento_incidencia"];
+        //echo '<pre>',print_r($id_tecnico),'</pre>';die;
         $this->db->select('id , nombre_departamento, detalles, direccion_departamento');
         $this->db->from('public.departamento_t');
-        $this->db->where('id =',$id_tecnico);
-        $this->db->limit(1);
+        $this->db->where('id',$id_tecnico);
+        //$this->db->limit(1);
         $index_tecnicos = $this->db->get(); //Obtengo los datos de la consulta
         $departamentos = $index_tecnicos->row_array(); //Con "result_array" lo transformo en array
         return $departamentos; //Envío los datos de la consulta
+        //echo '<pre>',print_r($tecnicos),'</pre>';die;
+  
+     }
+     public function extraer_correo_tecnico($data){
+        $id_tecnico=$data["tecnico_asignado"];
+        $this->db->select('id , correo_tecnico');
+        $this->db->from('public.tecnicos_t');
+        $this->db->where('id =',$id_tecnico);
+        $this->db->limit(1);
+        $index_tecnicos = $this->db->get(); 
+        $tecnicos = $index_tecnicos->row_array(); //Con "row_array" lo transformo en array de una linea
+        return $tecnicos; 
         //echo '<pre>',print_r($tecnicos),'</pre>';die;
   
      }                  

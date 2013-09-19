@@ -8,7 +8,16 @@ class Departamentos_m extends CI_Model {
         $departamentos = $index_departamentos->result_array(); //Con "result_array" lo transformo en array
         return $departamentos; //Envío los datos de la consulta
         //echo '<pre>',print_r($tecnicos),'</pre>';die;
-     } 
+     }
+    public function registrar_departamento($data)
+	{
+	
+	$salida=$this->db->insert('departamento_t', $data);
+
+    	//echo '<pre>',print_r($salida),'</pre>';die;
+    	return $salida;
+
+	}  
 
 }
 

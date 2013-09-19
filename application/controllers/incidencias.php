@@ -21,14 +21,13 @@ class Incidencias extends CI_Controller {
 			"lista_incidencias"=>$this->incidencias_m->listar_incidencias(),
 			"lista_departamentos"=>$this->departamentos_m->listar_departamentos(),
 			 );
-		//echo '<pre>',print_r($data),'</pre>';die;	
-		//$data['tecnicos']=$this->tecnicos_m->lista_roles();
 		$this->load->view('welcome', $data);				
 	}
 
 	public function registro()
 	{
 	//echo '<pre>',print_r($_POST),'</pre>';die;
+
 	$data = array(
 		'fecha_solicitud' =>$this->input->post("fecha_solicitud"),
 		'correo_solicitante' =>$this->input->post("correo_solicitante"),
@@ -37,7 +36,7 @@ class Incidencias extends CI_Controller {
 		'tipo_incidencia' =>$this->input->post("tipo_incidencia"),
 		'id_departamento_incidencia' =>$this->input->post("departamento"),
 		);
-
+	//echo '<pre>',print_r($data),'</pre>';die;
 	$registro_incidencia= $this->incidencias_m->registrar_incidencia($data);
 
 	if ($registro_incidencia < 1) {
@@ -53,11 +52,12 @@ class Incidencias extends CI_Controller {
 	}
 	public function _enviar_correo_usuario($data)
 	{
-		$usuario_solicitante=$data['correo_solicitante'];
-		$tecnico_asignado=$data['tecnico_asignado'];
-		$incidente_reportado=$data['detalles'];
-		$mensaje_correo="Se ha recibido una solicitud de Soporte Técnico con un incidente relacionado con $incidente_reportado desde el correo $usuario_solicitante , el mismo será atendido a la brevedad posible. Gracias por contactarnos";
+		$usuario_solicitante = $data['correo_solicitante'];
+		$tecnico_asignado = $data['tecnico_asignado'];
+		$incidente_reportado = $data['detalles'];
 
+		$mensaje_correo = "Se ha recibido una solicitud de Soporte Técnico con un incidente relacionado con $incidente_reportado desde el correo $usuario_solicitante , el mismo será atendido a la brevedad posible. Gracias por contactarnos";
+		//echo '<pre>',print_r($data),'</pre>';die;
 		$this->load->library('email');
 		$this->email->from('soporte@inn.gob.ve');
 		$this->email->to($usuario_solicitante);
@@ -75,24 +75,24 @@ class Incidencias extends CI_Controller {
 	public function _enviar_correo_tecnico($data)
 	{	
 
-		$departament_requiriente=$data['id_departamento_incidencia'];
-		$usuario_solicitante=$data['correo_solicitante'];
-		$incidente_reportado=$data['detalles'];
-		$tecnico_asignado=$this->tecnicos_m->busqueda_tecnico_asignado($data);
-		$departamento_solicitante=$this->tecnicos_m->busqueda_departamento($data);
-		$tecnico=$tecnico_asignado['nombres_tecnico']." ".$tecnico_asignado['apellidos_tecnico'];
-		$departamento=$departamento_solicitante['departamentos'];
-		//$correo_tecnico=$data['correo_tecnico'];
-		//$tecnico_asignado=$data['tecnico_asignado'];
+		$departament_requiriente = $data['id_departamento_incidencia'];
+		$usuario_solicitante = $data['correo_solicitante'];
+		$incidente_reportado = $data['detalles'];
+		$tecnico_asignado = $this->tecnicos_m->busqueda_tecnico_asignado($data);
+		$departamento_solicitante = $this->tecnicos_m->busqueda_departamento($data);
+		$correo_tecnico = $this->tecnicos_m->extraer_correo_tecnico($data);
+		
+		$tecnico = $tecnico_asignado['nombres_tecnico']." ".$tecnico_asignado['apellidos_tecnico'];
+		$departamento = $departamento_solicitante['nombre_departamento'];	
 		$incidente_reportado=$data['detalles'];
 		$mensaje_correo="Se le informa que ha sido asignado a un nuevo servicio técnico del usuario $usuario_solicitante en la oficina $departamento, con los siguientes detalles: $incidente_reportado, su técnico asignado es $tecnico";
 		//*FUNCION BUSCAR NOMBRE DEL TÉCNICO*///
 		
-		//echo '<pre>',print_r($tecnico_asignado),'</pre>';die;
+		
 		/***FUNCIÓN ENVIAR CORREO****/
 		$this->load->library('email');
 		$this->email->from('soporte@inn.gob.ve');
-		$this->email->to("jyacot@inn.gob.ve"/*$correo_tecnico*/);
+		$this->email->to($correo_tecnico["correo_tecnico"]);
 		$this->email->subject("Asignación de servicio técnico");
 		$this->email->message($mensaje_correo);
 		

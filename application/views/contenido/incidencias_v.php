@@ -1,5 +1,5 @@
 <div class="row">
-		<div class="col-md-10 col-md-offset-1">
+		<div class="col-md-6 col-md-offset-1">
 			<?php 
 			/**/
 			
@@ -18,8 +18,11 @@
 			$hora_exacta= unix_to_human($hora_exacta,TRUE,'eu');
 			$fecha = array(
 				"name"=>"fecha_solicitud",
-				//'id' =>"fecha" ,
-				"value"=>$hora_exacta, 
+				"id" => "disabledTextInput",
+				"value"=>$hora_exacta,
+				"class"=>"form-control",
+				//"disabled"=>"disabled", <--- Causa error el enviarlo en el POST
+				 
 
 				);
 		
@@ -47,7 +50,7 @@
 			echo form_open('incidencias/registro',$form);
 			echo $div_class;
 			echo form_label('Fecha de la Solicitud: ', 'fecha_');
-			echo form_input($fecha);
+			echo form_input($fecha,"disabled");
 			echo $div_close;
 			echo $div_class;
 			echo form_label('Correo Electrónico del Solicitante: ', "correo_solicitante");
