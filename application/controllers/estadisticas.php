@@ -38,6 +38,7 @@ class Estadisticas extends CI_Controller {
 		echo "Se falló al buscar en la base de datos";
 	} else {
 	
+		//$this->_grafico($busqueda_servicios_tecnico);
 		$this->_grafico($busqueda_servicios_tecnico);
 	};	
 	}
@@ -57,7 +58,6 @@ class Estadisticas extends CI_Controller {
 		//echo '<pre>',print_r($data),'</pre>';die;
 		$this->load->view('welcome', $data);
 	}
-
 
 
 }

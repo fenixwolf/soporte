@@ -11,7 +11,11 @@
 	<link rel="stylesheet" href="<?=base_url()?>dist/css/font-awesome.min.css">
 	<script src="<?=base_url()?>dist/js/jquery-2.0.3.min.js"></script>
 	<script src="<?=base_url()?>dist/js/fechajquery.js"></script>
-	<script type="text/javascript">
+	<script type="text/javascript" src="//www.google.com/jsapi"></script>
+    <script type="text/javascript">
+
+    google.load('visualization', '1', {packages: ['corechart']});
+	
 	$(document).ready(function() {
     setTimeout(function() {
         $("#alerta").fadeOut(500);
