@@ -10,7 +10,7 @@ class Departamentos extends CI_Controller {
 	public function index()
 	{
 		$data = array(
-			'titulo' =>'SGI | Registro de Departamento u Oficinas',
+			'titulo' =>'Registro de Departamento u Oficinas',
 			'seccion' =>'contenido/departamento_v',
 			'carga_exitosa' => '',
 			//'lista_tecnicos'=>$this->tecnicos_m->listar_tecnicos(),
@@ -46,7 +46,7 @@ class Departamentos extends CI_Controller {
 	{
 		$exito="si";
 		$data = array(
-			'titulo' =>'SGI | Registro de Departamento u Oficinas',
+			'titulo' =>'Registro de Departamento u Oficinas',
 			'seccion' =>'contenido/departamento_v',
 			"carga_exitosa"=>$exito,
 			//'carga_exitosa'=>$carga_exitosa,	

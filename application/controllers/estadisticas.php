@@ -13,7 +13,7 @@ class Estadisticas extends CI_Controller {
 	public function index()
 	{
 			$data = array(
-			'titulo' =>'SGI | Estadísticas',
+			'titulo' =>'Estadísticas',
 			'seccion' =>'contenido/estadisticas_v',
 			'carga_exitosa' => '',
 			'lista_tecnicos'=>$this->tecnicos_m->listar_tecnicos(),
@@ -50,7 +50,7 @@ class Estadisticas extends CI_Controller {
 		
 
 		$data = array(
-			'titulo' =>'SGI | Gráficas Estadísticas',
+			'titulo' =>'Gráficas Estadísticas',
 			'seccion' =>'contenido/graficas_estadisticas_v',
 			'carga_exitosa' => '',
 			'mes'=>$busqueda_servicios_tecnico,

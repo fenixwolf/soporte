@@ -1,8 +1,12 @@
 <header>
 <div class="row">
-	<div class="col-md-10 col-md-offset-1">
-		<h1><?php echo $titulo?></h1>
+	<div class="col-md-4 col-md-offset-1 col-xs-0">
+		<img src=<?=base_url()."dist/img/SGI-logo.svg"?> alt="Logo" class="img-responsive" id="logo_sgi">
 	</div>
+	<div class="col-md-10 col-md-offset-2">
+		<h1> <?php echo $titulo?></h1>
+	</div>
+
 </div>
 	
 </header>

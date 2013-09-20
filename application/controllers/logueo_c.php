@@ -5,7 +5,7 @@ class Logueo_c extends CI_Controller {
 	public function index()
 	{
 		$data = array(
-			'titulo' =>'SGI | Sistema de Gestión de Incidencias' ,
+			'titulo' =>'Sistema de Gestión de Incidencias' ,
 			'seccion'=>'contenido/login_v',
 			 );
 		$this->load->view('welcome', $data);	 		

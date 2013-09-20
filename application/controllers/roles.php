@@ -10,7 +10,7 @@ class Roles extends CI_Controller {
 	public function index()
 	{	
 			$data = array(
-			'titulo' =>'SGI | Registro de Roles' ,
+			'titulo' =>'Registro de Roles' ,
 			'seccion'=>'contenido/roles_v',
 			'carga_exitosa'=>'',
 				
@@ -47,7 +47,7 @@ class Roles extends CI_Controller {
 	{
 		$exito="si";
 		$data = array(
-			'titulo' =>'SGI | Registro de Roles' ,
+			'titulo' =>'Registro de Roles' ,
 			'seccion'=>'contenido/roles_v',
 			"carga_exitosa"=>$exito,
 			 );

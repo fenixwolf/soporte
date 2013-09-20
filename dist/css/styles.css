@@ -21,6 +21,11 @@ article{
 #logo{
 	margin-top: -8em;
 }
+#logo_sgi{
+	height: 10em;
+	position: fixed;
+	margin-top: -1em;
+}
 #html5{
 	height: 2.85em;
 }
@@ -32,4 +37,7 @@ body{
 }
 nav{
 	background-color: black;
+}
+#visualization{
+	background-color: green;
 }

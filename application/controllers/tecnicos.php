@@ -12,7 +12,7 @@ class Tecnicos extends CI_Controller {
 		
 		//echo '<pre>',print_r($data['tecnicos']),'</pre>';die;
 		$data = array(
-			'titulo' =>'SGI | Registro de Técnicos' ,
+			'titulo' =>'Registro de Técnicos' ,
 			'seccion'=>'contenido/tecnicos_v',
 			'tecnicos'=>$this->tecnicos_m->lista_roles(),
 			"carga_exitosa"=>"",
@@ -46,7 +46,7 @@ class Tecnicos extends CI_Controller {
 	{
 		$exito="si";
 		$data = array(
-			'titulo' =>'SGI | Registro de Técnicos' ,
+			'titulo' =>'Registro de Técnicos' ,
 			'seccion'=>'contenido/tecnicos_v',
 			'tecnicos'=>$this->tecnicos_m->lista_roles(),
 			"carga_exitosa"=>$exito,

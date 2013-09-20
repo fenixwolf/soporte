@@ -14,7 +14,7 @@ class Incidencias extends CI_Controller {
 
 
 			$data = array(
-			'titulo' =>'SGI | Registro de Incidencias',
+			'titulo' =>'Registro de Incidencias',
 			'seccion' =>'contenido/incidencias_v',
 			'carga_exitosa' => '',
 			'lista_tecnicos'=>$this->tecnicos_m->listar_tecnicos(),
@@ -108,7 +108,7 @@ class Incidencias extends CI_Controller {
 	{
 		$exito="si";
 		$data = array(
-			'titulo' =>'SGI | Registro de Incidencias',
+			'titulo' =>'Registro de Incidencias',
 			'seccion' =>'contenido/incidencias_v',
 			'carga_exitosa' => '',
 			'lista_tecnicos'=>$this->tecnicos_m->listar_tecnicos(),
