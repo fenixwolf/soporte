@@ -19,9 +19,10 @@ class Incidencias_m extends CI_Model {
 	{
 	
 	$salida=$this->db->insert('incidencia_t', $data);
+	
 
     	//echo '<pre>',print_r($salida),'</pre>';die;
-    	return $salida;
+    return $salida;
 
 	}
 	public function listar_incidencias(){

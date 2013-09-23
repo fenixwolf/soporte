@@ -1,18 +1,21 @@
 <header>
 <div class="row">
-	<div class="col-md-4 col-md-offset-1 col-xs-0">
+	<div class="col-md-1 hidden-xs hidden-sm">
 		<img src=<?=base_url()."dist/img/SGI-logo.svg"?> alt="Logo" class="img-responsive" id="logo_sgi">
 	</div>
-	<div class="col-md-10 col-md-offset-2">
+	<div class="col sm-1 hidden-xs hidden-md hidden-lg">
+		<img src=<?=base_url()."dist/img/SGI-logo.svg"?> alt="Logo" class="img-responsive" id="logo_sgi">
+	</div>
+	<div class="col-md-8">
 		<h1> <?php echo $titulo?></h1>
 	</div>
 
 </div>
 	
 </header>
+
 <div class="row">
 	<div class="col-md-10 col-md-offset-1">
-		
 		<nav class="navbar default" role="navigation" >
 		<a class="navbar-brand" href=<?=base_url()?>>SGI</a>
 		<ul class="nav navbar-nav">

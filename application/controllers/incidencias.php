@@ -7,6 +7,7 @@ class Incidencias extends CI_Controller {
 		$this->load->model('incidencias_m');
 		$this->load->model('tecnicos_m');
 		$this->load->model('departamentos_m');
+		$this->load->model('correo_log_m');
 	}
 	
 	public function index(){
@@ -52,19 +53,32 @@ class Incidencias extends CI_Controller {
 	}
 	public function _enviar_correo_usuario($data)
 	{
+
 		$usuario_solicitante = $data['correo_solicitante'];
 		$tecnico_asignado = $data['tecnico_asignado'];
 		$incidente_reportado = $data['detalles'];
+		$remitente='soporte@inn.gob.ve';
+		$asunto="Solicitud de Soporte Técnico al usuario $usuario_solicitante";
+		$fecha_ahora=time();
 
 		$mensaje_correo = "Se ha recibido una solicitud de Soporte Técnico con un incidente relacionado con $incidente_reportado desde el correo $usuario_solicitante , el mismo será atendido a la brevedad posible. Gracias por contactarnos";
 		//echo '<pre>',print_r($data),'</pre>';die;
 		$this->load->library('email');
-		$this->email->from('soporte@inn.gob.ve');
+		$this->email->from($remitente);
 		$this->email->to($usuario_solicitante);
-		$this->email->subject("Solicitud de Soporte Técnico al usuario $usuario_solicitante");
+		$this->email->subject($asunto);
 		$this->email->message($mensaje_correo);
+
+		$correo_log = array(
+			'remitente' =>$remitente ,
+			"destinatario"=>$usuario_solicitante,
+			
+			"detalles"=>$data['detalles'],
+			"fecha_envio"=> unix_to_human($fecha_ahora,TRUE,'eu'),
+			 );
 		
 		if ($this->email->send()) {
+			$this->correo_log_m->envio_correo_usuario($correo_log);
 			$this->_enviar_correo_tecnico($data);
 		} else {
 			echo "Correo Usuario no enviado";
@@ -87,16 +101,30 @@ class Incidencias extends CI_Controller {
 		$incidente_reportado=$data['detalles'];
 		$mensaje_correo="Se le informa que ha sido asignado a un nuevo servicio técnico del usuario $usuario_solicitante en la oficina $departamento, con los siguientes detalles: $incidente_reportado, su técnico asignado es $tecnico";
 		//*FUNCION BUSCAR NOMBRE DEL TÉCNICO*///
+
 		
 		
 		/***FUNCIÓN ENVIAR CORREO****/
+		$remitente='soporte@inn.gob.ve';
+		$destinatario=$correo_tecnico["correo_tecnico"];
+		$detalles="Asignación de servicio técnico";
+		
+
 		$this->load->library('email');
-		$this->email->from('soporte@inn.gob.ve');
-		$this->email->to($correo_tecnico["correo_tecnico"]);
-		$this->email->subject("Asignación de servicio técnico");
+		$this->email->from($remitente);
+		$this->email->to($destinatario);
+		$this->email->subject($detalles);
 		$this->email->message($mensaje_correo);
+
+		$correo_log = array(
+			'remitente' =>$remitente ,
+			"destinatario"=>$usuario_solicitante,
+			"detalles"=>$detalles,
+			"fecha_envio"=> unix_to_human(time(),TRUE,'eu'),
+			 );
 		
 		if ($this->email->send()) {
+			$this->correo_log_m->envio_correo_usuario($correo_log);
 			$this->_guardado();
 		} else {
 			echo "Correo técnico no enviado";

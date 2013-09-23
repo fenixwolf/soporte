@@ -21,7 +21,7 @@
       
         // Create and draw the visualization.
         new google.visualization.PieChart(document.getElementById('visualization')).
-            draw(data, {title:"Relación de servicios técnicos generales"});
+            draw(data, {title:"ESTADÍSTICAS GENERALES POR TÉCNICO"});
       }
       
 
