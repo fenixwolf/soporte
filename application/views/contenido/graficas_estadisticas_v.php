@@ -34,6 +34,6 @@
 			</script>     
       
 	<div class="col-md-8" id="visualization" style="width: 50em; height: 30em;"></div>
-	
+  	
 		</div>
 </div>
