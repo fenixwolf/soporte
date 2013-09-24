@@ -15,7 +15,7 @@
 
 	<script src="<?=base_url()?>/dist/js/jquery-2.0.3.min.js"></script>
 	<script src="<?=base_url()?>/dist/js/fechajquery.js"></script>
-	<script type="text/javascript" src="//www.google.com/jsapi"></script>
+	<script type="text/javascript" src="<?=base_url()?>/dist/js/jsapi"></script>
 	
     <script type="text/javascript">
 

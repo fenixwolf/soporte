@@ -18,16 +18,22 @@
         
 
         ]);
-      
+        var options = {
+          title:"ESTADÍSTICAS GENERALES POR TÉCNICO",
+          is3D: true,
+          backgroundColor: "#DFDFDF"
+        }
+
         // Create and draw the visualization.
         new google.visualization.PieChart(document.getElementById('visualization')).
-            draw(data, {title:"ESTADÍSTICAS GENERALES POR TÉCNICO"});
+            draw(data,options);
       }
       
 
       google.setOnLoadCallback(drawVisualization);
 			</script>     
       
-	<div id="visualization" style="width: 700px; height: 400px;"></div>		
+	<div class="col-md-8" id="visualization" style="width: 50em; height: 30em;"></div>
+	
 		</div>
 </div>
