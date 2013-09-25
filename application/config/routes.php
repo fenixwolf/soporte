@@ -38,7 +38,7 @@
 |
 */
 
-$route['default_controller'] = "logueo_c";
+$route['default_controller'] = "principal";
 $route['404_override'] = '';
 
 
