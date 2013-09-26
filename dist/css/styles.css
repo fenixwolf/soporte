@@ -9,6 +9,7 @@ background: -o-linear-gradient(left, #105410 0%,#29db32 64%,#70d664 100%); /* Op
 background: -ms-linear-gradient(left, #105410 0%,#29db32 64%,#70d664 100%); /* IE10+ */
 background: linear-gradient(to right, #105410 0%,#29db32 64%,#70d664 100%); /* W3C */
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#105410', endColorstr='#70d664',GradientType=1 ); /* IE6-8 */
+
 	
 }
 
@@ -35,4 +36,16 @@ h1{
 
 #logo_sgi{	
 	margin-top: 1em;
+}
+#tablas_estadisticas{
+	background:#fcfcfc url('images/module.png') repeat-x left bottom;
+    border:1px solid #ccc;
+    border-bottom:2px solid #bbb;
+    border-top:1px solid #ddd;
+    border-radius:10px;
+    -webkit-border-radius:10px;
+    -moz-border-radius:10px;
+}
+th{
+	text-align: center;
 }

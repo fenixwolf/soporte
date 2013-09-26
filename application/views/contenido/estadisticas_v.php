@@ -1,4 +1,5 @@
 <?php 
+			//echo '<pre>',print_r($lista_tecnicos),'</pre>';die;
 			foreach ($lista_tecnicos as $indice=>$arraytecnico) {
 			$dropdown_tecnico[$arraytecnico['id']] = $arraytecnico['nombres_tecnico']." ".$arraytecnico['apellidos_tecnico'];
 			//echo '<pre>',print_r($dropdown_tecnico),'</pre>';die;

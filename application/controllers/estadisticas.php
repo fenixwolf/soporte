@@ -40,7 +40,7 @@ class Estadisticas extends CI_Controller {
 	} else {
 	
 		//$this->_grafico($busqueda_servicios_tecnico);
-		$this->_grafico($busqueda_servicios_tecnico);
+		$this->_grafico_tecnico($busqueda_servicios_tecnico);
 	};	
 
 	}
@@ -59,16 +59,16 @@ class Estadisticas extends CI_Controller {
 	} else {
 	
 		//$this->_grafico($busqueda_servicios_tecnico);
-		$this->_grafico($busqueda_mes);
+		$this->_grafico_tecnico($busqueda_mes);
 	};
 	}
 
 
-	public function _grafico($busqueda_servicios_tecnico)
+	public function _grafico_tecnico($busqueda_servicios_tecnico)
 	{
 		//echo '<pre>',print_r($busqueda_servicios_tecnico),'</pre>';die;
 		
-
+		
 		$data = array(
 			'titulo' =>'Gráficas Estadísticas',
 			'seccion' =>'contenido/graficas_estadisticas_v',

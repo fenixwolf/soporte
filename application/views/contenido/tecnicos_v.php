@@ -1,5 +1,6 @@
+	<?php //echo '<pre>',print_r($lista_tecnicos),'</pre>';die; ?>
 	<div class="row">
-		<div class="col-md-5 col-md-offset-1">
+		<div class="col-md-3 col-md-offset-1">
 			<?php 
 			
 			$form = array(
@@ -41,12 +42,6 @@
 
 			/**FORMULARIO**/
 			echo form_open('tecnicos/registro',$form);
-
-			echo $div_class;
-			echo form_label('Correo Elecrónico: ', 'correo');
-			echo form_input($correo);
-			echo $div_close;
-
 			echo $div_class;
 			echo form_label('Nombres: ', 'nombres_tecnico');
 			echo form_input($nombres_tecnico);
@@ -55,6 +50,11 @@
 			echo $div_class;
 			echo form_label('Apellidos: ', 'apellidos_tecnico');
 			echo form_input($apellidos_tecnico);
+			echo $div_close;
+
+			echo $div_class;
+			echo form_label('Correo Elecrónico: ', 'correo');
+			echo form_input($correo);
 			echo $div_close;
 
 			/*echo $div_class;
@@ -69,5 +69,24 @@
 
 
 			 ?>
+		</div>
+		<div class="col-md-5 col-md-offset-1 table-responsive">
+			<table class="table table-hover table-bordered" id="tablas_estadisticas">
+				<tr>
+					<th>Nombres y Apellidos</th>
+					<th>Correo Electrónico</th>
+					<th>Acción</th>
+				</tr>
+				<?php 
+				foreach ($lista_tecnicos as $key => $array_datos_tecnico) {
+					$nombretecnico=$array_datos_tecnico['nombres_tecnico']." ".$array_datos_tecnico['apellidos_tecnico'];
+					$correo=$array_datos_tecnico['correo_tecnico'];
+					echo "<tr><td>$nombretecnico</td><td>$correo</td>
+					<td>Borrar
+						</td></tr>";
+				}
+				 ?>
+				
+			</table>
 		</div>
 	</div>

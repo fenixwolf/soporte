@@ -15,6 +15,7 @@ class Tecnicos extends CI_Controller {
 			'titulo' =>'Registro de Técnicos' ,
 			'seccion'=>'contenido/tecnicos_v',
 			'tecnicos'=>$this->tecnicos_m->lista_roles(),
+			'lista_tecnicos'=>$this->tecnicos_m->listar_tecnicos(),
 			"carga_exitosa"=>"",
 			
 			 );
@@ -49,6 +50,7 @@ class Tecnicos extends CI_Controller {
 			'titulo' =>'Registro de Técnicos' ,
 			'seccion'=>'contenido/tecnicos_v',
 			'tecnicos'=>$this->tecnicos_m->lista_roles(),
+			'lista_tecnicos'=>$this->tecnicos_m->listar_tecnicos(),
 			"carga_exitosa"=>$exito,
 			//'carga_exitosa'=>$carga_exitosa,	
 			 );
