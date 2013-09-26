@@ -13,6 +13,8 @@ class Departamentos extends CI_Controller {
 			'titulo' =>'Registro de Departamento u Oficinas',
 			'seccion' =>'contenido/departamento_v',
 			'carga_exitosa' => '',
+			"lista_departamentos"=>$this->departamentos_m->listar_departamentos(),
+
 			//'lista_tecnicos'=>$this->tecnicos_m->listar_tecnicos(),
 			//"lista_incidencias"=>$this->incidencias_m->listar_incidencias(),
 			//"lista_departamentos"=>$this->departamentos_m->listar_departamentos(),

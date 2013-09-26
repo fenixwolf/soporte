@@ -1,5 +1,6 @@
 
-		<div class="col-md-5 col-md-offset-1">
+		<?php  //echo '<pre>',print_r($lista_departamentos),'</pre>';die;?>
+		<div class="col-md-4 col-md-offset-1">
 			<?php 
 			/**/
 			
@@ -69,4 +70,23 @@
 
 
 			 ?>
+		</div>
+		<div class="col-md-5 col-md-offset-1 table-responsive">
+			<table class="table table-hover table-bordered" id="tablas_estadisticas">
+				<tr>
+					<th>DEPARTAMENTO</th>
+					<th>DIRECCIÓN</th>
+					<th>ACCIÓN</th>
+					
+				</tr>
+				<?php 
+				foreach ($lista_departamentos as $key => $arrya_departamento) {
+					$nombre_departamento=$arrya_departamento['nombre_departamento'];
+					$direccion=$arrya_departamento['direccion_departamento'];
+					echo "<tr><td>$nombre_departamento</td><td>$direccion</td><td>Accion</td>
+					</tr>";
+				}
+				 ?>
+				
+			</table>
 		</div>
