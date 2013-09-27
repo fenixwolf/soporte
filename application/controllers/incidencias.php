@@ -61,7 +61,7 @@ class Incidencias extends CI_Controller {
 		$asunto="Solicitud de Soporte Técnico al usuario $usuario_solicitante";
 		$fecha_ahora=time();
 
-		$mensaje_correo = "Se ha recibido una solicitud de Soporte Técnico con un incidente relacionado con $incidente_reportado desde el correo $usuario_solicitante , el mismo será atendido a la brevedad posible. Gracias por contactarnos";
+		$mensaje_correo = "Se ha recibido una solicitud de Soporte Técnico con un incidente relacionado con $incidente_reportado \r\ndesde el correo $usuario_solicitante , el mismo será atendido a la brevedad posible.\r\nGracias por contactarnos";
 		//echo '<pre>',print_r($data),'</pre>';die;
 		$this->load->library('email');
 		$this->email->from($remitente);

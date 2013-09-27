@@ -18,6 +18,9 @@ class Estadisticas extends CI_Controller {
 			'carga_exitosa' => '',
 			'lista_tecnicos'=>$this->tecnicos_m->listar_tecnicos(),
 			"lista_incidencias"=>$this->incidencias_m->listar_incidencias(),
+			"estadistica_hoy"=>$this->estadisticas_m->estadistica_hoy(),
+
+
 			//'lista_tecnicos'=>$this->tecnicos_m->listar_tecnicos(),
 			//"lista_incidencias"=>$this->incidencias_m->listar_incidencias(),
 			//"lista_departamentos"=>$this->departamentos_m->listar_departamentos(),
@@ -116,6 +119,7 @@ class Estadisticas extends CI_Controller {
 		//echo '<pre>',print_r($data),'</pre>';die;
 		$this->load->view('welcome', $data);
 	}
+	
 
 
 }
