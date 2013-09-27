@@ -1,4 +1,4 @@
-<div class="col-md-5 col-md-offset-2">
+<div class="col-md-3 col-md-offset-2">
 		<?php 
 		$label_abre='<div class="form-group">';
 		$label_cierra='</div>';

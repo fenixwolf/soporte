@@ -31,7 +31,7 @@ class Incidencias extends CI_Controller {
 
 	$data = array(
 		'fecha_solicitud' =>$this->input->post("fecha_solicitud"),
-		'correo_solicitante' =>$this->input->post("correo_solicitante"),
+		'correo_solicitante' =>strtolower($this->input->post("correo_solicitante")),
 		'detalles' =>$this->input->post("detalles"),
 		'tecnico_asignado' =>$this->input->post("tecnico_asignado"),
 		'tipo_incidencia' =>$this->input->post("tipo_incidencia"),

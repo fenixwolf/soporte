@@ -26,9 +26,9 @@ class Tecnicos extends CI_Controller {
 	{
 	//echo '<pre>',print_r($_POST),'</pre>';die;
 	$data = array(
-		'correo_tecnico' =>$this->input->post("correo"),
-		'nombres_tecnico' =>$this->input->post("nombres_tecnico"),
-		'apellidos_tecnico' =>$this->input->post("apellidos_tecnico"),
+		'correo_tecnico' =>strtolower($this->input->post("correo")),
+		'nombres_tecnico' =>ucwords(strtolower($this->input->post("nombres_tecnico"))),
+		'apellidos_tecnico' =>ucwords(strtolower($this->input->post("apellidos_tecnico"))),
 		//'tipo_rol' =>$this->input->post("tipo_rol"),
 
 		);
