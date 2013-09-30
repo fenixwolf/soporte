@@ -39,6 +39,7 @@
 				'name' =>"enviar" ,
 				"value"=>'Reportar',
 				'class'=>"btn btn-default" );
+			
 			$limpiar = array(
 				'name' =>"limpiar" ,
 				"value"=>'Limpiar',

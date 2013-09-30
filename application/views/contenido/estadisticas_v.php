@@ -52,14 +52,16 @@
 			
 			$form = array(
 				'class' =>'form-inline' ,
-				'role' =>'form' , 
+				'role' =>'form' ,
+				'id'=>'ver_estadistica_global' 
 				);
 			$submit = array(
 				'class' =>'btn btn-primary' ,
-				'value'=>'Buscar',
+				'value'=>'Generar',
 				'id'=>'enviar',
 				'name'=>"enviar",
-				'data-loading-text'=>"Generando...",
+
+				//'data-loading-text'=>"Generando...",
 				
 				);
 			$form_group='<div class="form-group">';
@@ -79,7 +81,12 @@
 			echo form_open('estadisticas/globales',$form);
 			echo $form_group;
 			echo form_label('Estadisticas Globales: ',"estadisticas_globales");
-			echo form_submit($submit);
+			?>
+			<a href='javascript:enviarform1()' class="btn btn-small btn-primary" id='girar'>
+				<i class='icon-cog'></i> Generar
+			</a>
+			<?php
+			
 			
 			echo $form_group_close;
 			echo form_close();
@@ -161,6 +168,9 @@
 
         var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
         chart.draw(data, options);
+      }
+      function enviarform1(){
+      		$("#ver_estadistica_global").submit();
       }
     </script>
   

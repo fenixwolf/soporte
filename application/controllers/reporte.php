@@ -13,7 +13,7 @@ class Reporte extends CI_Controller {
 	public function index()
 	{
 		$data = array(
-			'titulo' =>'Estadísticas',
+			'titulo' =>'Reporte de Estatus',
 			'seccion' =>'contenido/reporte_v',
 			'lista_incidencias'=>$this->reporte_m->listar_no_atendidos(),
 			//'lista_tecnicos'=>$this->tecnicos_m->listar_tecnicos(),
