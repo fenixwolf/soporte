@@ -4,12 +4,13 @@
 	<meta charset="UTF-8">
 	
 	<title><?=$titulo?></title>
-	<link rel="stylesheet" href="<?=base_url()?>/dist/css/bootstrap.css" rel="stylesheet" media="screen">
-	<link rel="stylesheet" href="<?=base_url()?>/dist/js/bootstrap.js" media="screen" type="text/css">
-	<link rel="stylesheet" href="<?=base_url()?>/dist/css/styles.css" media="screen">
-	<link rel="stylesheet" href="<?=base_url()?>/dist/css/header.css" media="screen">
-	<link rel="stylesheet" href="<?=base_url()?>/dist/css/bootstrap-theme.css" type="text/css" media="screen">
-	<link rel="stylesheet" href="<?=base_url()?>/dist/css/font-awesome.min.css">
+	<link rel="stylesheet" href="<?=base_url()?>dist/css/bootstrap.css" rel="stylesheet" media="screen">
+	<link rel="stylesheet" href="<?=base_url()?>dist/js/bootstrap.js" media="screen" type="text/css">
+	<link rel="stylesheet" href="<?=base_url()?>dist/css/styles.css" media="screen">
+	<link rel="stylesheet" href="<?=base_url()?>dist/css/header.css" media="screen">
+	<link rel="stylesheet" href="<?=base_url()?>dist/css/bootstrap-theme.css" type="text/css" media="screen">
+	<link rel="stylesheet" href="<?=base_url()?>dist/font-awesome/css/font-awesome.css">
+
 	<link href="<?=base_url()?>/dist/img/favicon.ico" rel="icon" type="image/x-icon" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -21,16 +22,19 @@
 
 
 	$(document).ready(function() {
-    setTimeout(function() {
-        $("#alerta").fadeOut(500);
-    	},1500);
-
-    jQuery(function($){
+    setTimeout(function() {$("#alerta").fadeOut(500);},1500);
+    //$("#fecha_disabled").attr("disabled", true);
+    $("select").addClass('form-control');
+    $(".collapse").collapse();
+	
+    	
+    	});
+	
+	jQuery(function($){
    $("#fecha").mask("99-99-9999");
-
    //$('#monto').mask('99999,99');
   	});
-});
+
 </script>
 </head>
 <?php 

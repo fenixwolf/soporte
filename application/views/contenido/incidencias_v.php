@@ -18,9 +18,10 @@
 			$hora_exacta= unix_to_human($hora_exacta,TRUE,'eu');
 			$fecha = array(
 				"name"=>"fecha_solicitud",
-				"id" => "disabledTextInput",
+				"id" => "fecha_disabled",
 				"value"=>$hora_exacta,
 				"class"=>"form-control",
+				'readonly'=>'readonly',
 				//"disabled"=>"disabled", <--- Causa error el enviarlo en el POST
 				);
 			$correo_solicitante = array(

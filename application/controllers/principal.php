@@ -6,7 +6,7 @@ class Principal extends CI_Controller {
 	{
 		$data = array(
 			'titulo' =>'Sistema de Gestión de Incidencias' ,
-			'seccion'=>'contenido/login_v',
+			'seccion'=>'contenido/inicio_v',
 			 );
 		$this->load->view('welcome', $data);	 		
 	}

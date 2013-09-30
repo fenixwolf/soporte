@@ -66,6 +66,16 @@ class Estadisticas_m extends CI_Model {
         return $meses; //Envío los datos de la consulta
         //echo '<pre>',print_r($meses),'</pre>';die;
      }
+     public function lista_meses(){
+
+  
+        $index_meses = $this->db->get('meses_con_registros_v');
+        //echo '<pre>',print_r($index_tecnicos),'</pre>';die; 
+        $meses = $index_meses->result_array(); //Con "result_array" lo transformo en array
+       //echo '<pre>',print_r($meses),'</pre>';die;
+        return $meses; //Envío los datos de la consulta
+        //echo '<pre>',print_r($meses),'</pre>';die;
+     }
 
 
 	
