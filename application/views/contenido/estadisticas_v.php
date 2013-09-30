@@ -59,6 +59,7 @@
 				'value'=>'Buscar',
 				'id'=>'enviar',
 				'name'=>"enviar",
+				'data-loading-text'=>"Generando...",
 				
 				);
 			$form_group='<div class="form-group">';
