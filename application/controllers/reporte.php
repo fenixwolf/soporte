@@ -23,6 +23,9 @@ class Reporte extends CI_Controller {
 			//echo '<pre>',print_r($data["lista_incidencias"]),'</pre>';die;
 		$this->load->view('welcome', $data);
 	}
+	public function actualizar_reporte(){
+		echo '<pre>',print_r($_POST),'</pre>';die;
+	}
 
 }
 
