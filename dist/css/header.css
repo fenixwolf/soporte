@@ -1,0 +1,30 @@
+#header1{
+	background-color: #FF8A00;
+	color: white;
+	
+	font-family: 'Ubuntu', sans-serif;
+
+}
+#header2{
+	background-color: #9933CC;
+	color: white;
+	
+	font-family: 'Ubuntu', sans-serif;
+}
+#header3{
+	background-color: green;
+	color: white;
+	
+	font-family: 'Ubuntu', sans-serif;
+}
+#header4{
+	background-color: #CC0000;
+	color: white;
+	
+	font-family: 'Ubuntu', sans-serif;
+}
+#header5{
+	background-color: #0099CC;
+	color: white;
+	font-family: 'Ubuntu', sans-serif;
+}

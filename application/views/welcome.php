@@ -7,6 +7,7 @@
 	<link rel="stylesheet" href="<?=base_url()?>dist/css/bootstrap.css" rel="stylesheet" media="screen">
 	<link rel="stylesheet" href="<?=base_url()?>dist/js/bootstrap.js" media="screen" type="text/css">
 	<link rel="stylesheet" href="<?=base_url()?>dist/css/styles.css" media="screen">
+	<link rel="stylesheet" href="<?=base_url()?>dist/css/header.css" media="screen">
 	<link rel="stylesheet" href="<?=base_url()?>dist/css/bootstrap-theme.css" type="text/css" media="screen">
 	<link rel="stylesheet" href="<?=base_url()?>dist/font-awesome/css/font-awesome.css">
 	<link href="<?=base_url()?>/dist/img/favicon.ico" rel="icon" type="image/x-icon" />

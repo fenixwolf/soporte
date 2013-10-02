@@ -8,6 +8,7 @@
 
 			$form = array(
 				'role' =>"form" ,
+				'id'=>'generar',
 				//'class' =>'form-horizontal', 
 				);
 			$hora_exacta=time();
@@ -93,11 +94,23 @@
 			echo form_label('Técnico Asignado: ',"tecnico_asignado");
 			echo form_dropdown('tecnico_asignado', $dropdown_tecnico);
 			echo $div_close;
-			echo form_submit($enviar);
+			?>
+					<a href='javascript:generar_incidencia' class="btn btn-small btn-default">
+						<i class='icon-cogs'></i> Reportar
+					</a>
+						
+			<?php
 			echo form_reset($limpiar);
 			echo form_close();
 
 
 			 ?>
 		</div>
+<script type="text/javascript">
+function generar_incidencia(){
+
+	$('#form_generar').submit();
+}		
+	
+</script>		
 	</div>
