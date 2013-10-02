@@ -33,7 +33,7 @@
 					echo form_hidden($hidden);
 					?>
 					<a href='javascript:enviar_reporte_id(<?=$id?>)' class="btn btn-small btn-primary">
-						<i class='icon-edit'></i> <?=$id?>
+						<i class='icon-expand'></i> <b>Reportar</b>
 					</a>
 						
 					<?php

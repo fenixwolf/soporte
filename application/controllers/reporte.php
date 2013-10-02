@@ -24,7 +24,18 @@ class Reporte extends CI_Controller {
 		$this->load->view('welcome', $data);
 	}
 	public function actualizar_reporte(){
-		echo '<pre>',print_r($_POST),'</pre>';die;
+		//echo '<pre>',print_r($_POST),'</pre>';die;
+
+		$data = array(
+			'id_reportado'=>$this->input->post('id_seleccionado'),
+			'titulo' =>"Reporte de Estatus | Caso ".$this->input->post('id_seleccionado'),
+			'seccion' =>'contenido/actualizacion_reporte_v',
+			//'lista_tecnicos'=>$this->tecnicos_m->listar_tecnicos(),
+			//"lista_incidencias"=>$this->incidencias_m->listar_incidencias(),
+			//"lista_departamentos"=>$this->departamentos_m->listar_departamentos(),
+			 );
+			//echo '<pre>',print_r($data["lista_incidencias"]),'</pre>';die;
+		$this->load->view('welcome', $data);
 	}
 
 }
