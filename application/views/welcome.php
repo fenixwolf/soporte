@@ -5,7 +5,7 @@
 	
 	<title><?=$titulo?></title>
 	<link rel="stylesheet" href="<?=base_url()?>dist/css/bootstrap.css" rel="stylesheet" media="screen">
-	<link rel="stylesheet" href="<?=base_url()?>dist/js/bootstrap.js" media="screen" type="text/css">
+	
 	<link rel="stylesheet" href="<?=base_url()?>dist/css/styles.css" media="screen">
 	<link rel="stylesheet" href="<?=base_url()?>dist/css/header.css" media="screen">
 	<link rel="stylesheet" href="<?=base_url()?>dist/css/bootstrap-theme.css" type="text/css" media="screen">
@@ -13,6 +13,7 @@
 	<link href="<?=base_url()?>/dist/img/favicon.ico" rel="icon" type="image/x-icon" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<script src="<?=base_url()?>/dist/js/jquery-2.0.3.min.js"></script>
+	<script src="<?=base_url()?>/dist/js/bootstrap.js"></script>
 	<script src="<?=base_url()?>/dist/js/fechajquery.js"></script>
 	<script type="text/javascript" src="<?=base_url()?>/dist/js/jsapi"></script>	
     

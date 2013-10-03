@@ -1,4 +1,4 @@
-<header id='<?="header".rand(1,4)?>'>
+<header id='<?="header".rand(1,6)?>'>
 <div class="row">
 	<div class="col-md-1 hidden-xs hidden-sm">
 		<img src=<?=base_url()."dist/img/SGI-logo.svg"?> alt="Logo" class="img-responsive" id="logo_sgi">
