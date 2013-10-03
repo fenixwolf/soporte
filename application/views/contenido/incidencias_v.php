@@ -1,5 +1,6 @@
 <div class="row">
-		<div class="col-md-5 col-md-offset-1">
+		<div class="col-md-6 col-md-offset-1">
+			
 			<?php 
 			/**/
 			
@@ -95,8 +96,8 @@
 			echo form_dropdown('tecnico_asignado', $dropdown_tecnico);
 			echo $div_close;
 			?>
-					<a href='javascript:generar_incidencia' class="btn btn-small btn-default">
-						<i class='icon-cogs'></i> Reportar
+					<a href='javascript:generar_incidencia()' class="btn btn-small btn-default">
+						<i class='icon-cog'></i> Reportar
 					</a>
 						
 			<?php
@@ -106,11 +107,12 @@
 
 			 ?>
 		</div>
+
 <script type="text/javascript">
 function generar_incidencia(){
-
-	$('#form_generar').submit();
-}		
+	
+	$('#generar').submit();
+};		
 	
 </script>		
 	</div>

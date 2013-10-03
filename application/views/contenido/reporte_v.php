@@ -21,7 +21,12 @@
 			$tiempo_transcurrido=timespan($fecha_solicitud,$ahora);
 			$tecnico_asignado=$array_lista_incidencias['nombres_tecnico']." ".$array_lista_incidencias['apellidos_tecnico'] ;
 			$form = array('id' =>'form_'.$id ,);
-			$hidden = array('id_seleccionado' =>$id, );
+			$hidden = array(
+				'id_seleccionado' =>$id, 
+				'correo_solicitante'=>$correo_solicitante,
+				'tipo_incidencia'=>$tipo_incidencia,
+				'tecnico_asignado'=>$tecnico_asignado,	
+				);
 					echo "<tr>
 					<td>$correo_solicitante</td>
 					<td>$departamento</td>
@@ -33,7 +38,7 @@
 					echo form_hidden($hidden);
 					?>
 					<a href='javascript:enviar_reporte_id(<?=$id?>)' class="btn btn-small btn-primary">
-						<i class='icon-expand'></i> <b>Reportar</b>
+						<i class='icon-cog'></i> Reportar
 					</a>
 						
 					<?php
@@ -45,6 +50,7 @@
 					</tr>";
 				};
 				 ?>
+
 <script type="text/javascript">
 function enviar_reporte_id(id){
 

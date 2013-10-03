@@ -53,7 +53,7 @@ if (@$carga_exitosa=="si") {
     //$("#fecha_disabled").attr("disabled", true);
     $("select").addClass('form-control');
     //$(".collapse").collapse();
-    $('#girar').click(function(){
+    $('a').click(function(){
     	//alert("alerta");
     	$('i.icon-cog').addClass('icon-spin');
     });
