@@ -1,4 +1,6 @@
+<?php //echo '<pre>',print_r($lista_incidencias),'</pre>';die; ?>
 <table class="table table-hover table-bordered" id="tablas_estadisticas">
+
 				<tr>
 					<th>CORREO SOLICITANTE</th>
 					<th>DEPARTAMENTO U OFICINA</th>
@@ -12,7 +14,7 @@
 
 				foreach ($lista_incidencias as $key => $array_lista_incidencias) {
 					//print_r($array_lista_incidencias);
-			$id=$array_lista_incidencias['id'];
+			$id=$array_lista_incidencias['incidencia_id'];
 			$departamento=$array_lista_incidencias['nombre_departamento'];
 			$correo_solicitante=$array_lista_incidencias['correo_solicitante'];
 			$tipo_incidencia=$array_lista_incidencias['tipo_incidencia'];

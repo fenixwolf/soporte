@@ -3,18 +3,6 @@
 class Incidencias_m extends CI_Model {
 
 	
-	public function index()
-	{	
-			$data = array(
-			'titulo' =>'SGI | Registro de Incidencias' ,
-			'seccion'=>'contenido/incidencias_v',
-			'carga_exitosa'=>'',
-
-				
-			 );
-		//$data['tecnicos']=$this->tecnicos_m->lista_roles();
-		$this->load->view('welcome', $data);				
-	}
 	public function registrar_incidencia($data)
 	{
 	

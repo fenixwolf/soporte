@@ -22,7 +22,7 @@ h1{
 #logo_sgi{	
 	margin-top: 1em;
 }
-#tablas_estadisticas{
+table{
 	background:#fcfcfc;
     border:1px solid #ccc;
     border-bottom:2px solid #bbb;
