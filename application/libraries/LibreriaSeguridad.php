@@ -34,15 +34,16 @@ class LibreriaSeguridad
 
 			$existe= ($query->num_rows() >0);
 			if ($existe) {
-				$con_permiso[] =array($rol["id_rol"],$rol["rol"]);
+				$con_permiso[] =array($rol["id_rol"],$rol["rol"],$id);
 			}
 			else{
-				$sin_permiso[] =array($rol["id_rol"],$rol["rol"]);
+				$sin_permiso[] =array($rol["id_rol"],$rol["rol"],$id);
 			}
 		}	
 
 		return array($con_permiso, $sin_permiso);
 	}
+	
 
 }
 

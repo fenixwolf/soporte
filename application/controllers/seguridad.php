@@ -76,12 +76,31 @@ class Seguridad extends CI_Controller {
 			//Carga de Arreglos para las tablas con permiso o sin él
 			'con_permiso'=>$perfiles[0],
 			'sin_permiso'=>$perfiles[1],
-			//'listar_menu'=>$this->seguridad_m->listar_menu(),
-			//'listar_permisos'=>$this->seguridad_m->listar_permisos(),
-			//'listar_roles'=>$this->seguridad_m->listar_roles(),
+			
 			 );
 		//echo '<pre>',print_r($perfiles ,true),'</pre>';die;	
 		$this->load->view('welcome', $data);
+	}
+
+
+	//Añadir permiso
+	public function noasignado_asignado(){
+		$rol_id = $this->uri->segment(3);
+		$menu_id = $this->uri->segment(4);
+		//echo '<pre>',print_r($menu_id ,true),'</pre>';die;
+		$this->seguridad_m->agregar_permiso($rol_id, $menu_id);
+		redirect('seguridad/asignar_permisos_menu/'.$menu_id);
+
+
+	}
+	//Eliminar Permiso
+	public function asignado_noasignado(){
+		$rol_id = $this->uri->segment(3);
+		$menu_id = $this->uri->segment(4);
+		//echo '<pre>',print_r($menu_id ,true),'</pre>';die;
+		$this->seguridad_m->eliminar_permiso($rol_id, $menu_id);
+		redirect('seguridad/asignar_permisos_menu/'.$menu_id);
+		
 	}
 
 

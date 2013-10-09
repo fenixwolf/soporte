@@ -62,7 +62,20 @@ class Seguridad_m extends CI_Model {
         return $roles; //Envío los datos de la consulta
         //echo '<pre>',print_r($tecnicos),'</pre>';die;
 	}
+	public function agregar_permiso($rol_id, $menu_id){
+		$registro = array();
+        $registro['id_menu'] = $menu_id;
+        $registro['id_rol'] = $rol_id;
+        $registro['fecha_creacion'] = date('Y/m/d H:i');        
+        $this->db->insert('seguridad.roles_menu_r',$registro);
 
+
+	}
+	public function eliminar_permiso($rol_id, $menu_id){
+		$this->db->where('id_rol', $rol_id);
+        $this->db->where('id_menu', $menu_id);
+        $this->db->delete('seguridad.roles_menu_r');
+	}
 	
 
 }
