@@ -9,7 +9,13 @@
 |	http://codeigniter.com/user_guide/general/hooks.html
 |
 */
-
+$hook['post_controller_constructor'] = array(
+    'class'    => '',
+    'function' => 'Autenticar',
+    'filename' => 'Acceso.php',
+    'filepath' => 'hooks',
+    'params'   => array()
+    );
 
 
 /* End of file hooks.php */

@@ -10,6 +10,14 @@ class Principal extends CI_Controller {
 			 );
 		$this->load->view('welcome', $data);	 		
 	}
+	public function denegado()
+	{
+		$data = array(
+			'titulo' =>'Acceso Denegado' ,
+			'seccion'=>'contenido/seguridad/denegado_v',
+			 );
+		$this->load->view('welcome', $data);	 		
+	}
 }
 
 /* End of file principal.php */
