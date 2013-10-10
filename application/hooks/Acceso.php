@@ -13,8 +13,11 @@ if ( ! function_exists('Autenticar'))
 		$libres = array(
 			'/',
 			'principal/index',
-			'principal/denegado', 
+			'principal/denegado',
+			'login/index',
+			'login'
 			);
+
 		if(in_array($url, $libres)){
 			echo $CI->output->get_output();
 		}

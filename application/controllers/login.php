@@ -6,7 +6,7 @@ class Login extends CI_Controller {
 	{
 		$data = array(
 			'titulo' =>'Sistema de Gestión de Incidencias' ,
-			'seccion'=>'contenido/inicio_v',
+			'seccion'=>'contenido/seguridad/login_v',
 			 );
 		$this->load->view('welcome', $data);	 		
 	}
