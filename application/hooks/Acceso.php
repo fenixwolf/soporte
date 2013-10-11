@@ -12,10 +12,9 @@ if ( ! function_exists('Autenticar'))
 
 		$libres = array(
 			'/',
-			'principal/index',
 			'principal/denegado',
-			'login/index',
-			'login'
+			'principal/index',
+			'seguridad/login',
 			);
 
 		if(in_array($url, $libres)){

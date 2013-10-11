@@ -44,7 +44,9 @@ class LibreriaSeguridad
 		return array($con_permiso, $sin_permiso);
 	}
 	
+	public function login(){
 
+	}
 }
 
 /* End of file LibreriaSeguridad.php */

@@ -40,8 +40,9 @@
 		<ul class="nav navbar-nav navbar-right">
       
       <li class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class='icon-unlock-alt'></i> Seguridad<b class="caret"></b></a>
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class='icon-lock'></i> Seguridad<b class="caret"></b></a>
         <ul class="dropdown-menu">
+        	<li><a href="<?=base_url()?>seguridad/login"><i class='icon-unlock-alt'></i> Ingreso al Sistema</a></li>
           <li><a href="<?=base_url()?>seguridad"> Permisos Asignados</a></li>
           <li><a href="<?=base_url()?>seguridad/seguridad_menu"> Permisos a Menú</a></li>
           

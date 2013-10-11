@@ -11,6 +11,11 @@
 				'name' =>"correo" ,
 				"class" => 'form-control'
 				);
+			$pass = array(
+				'name' =>"pass" ,
+				"class" => 'form-control',
+
+				);
 			$nombres_tecnico = array(
 				'name' =>"nombres_tecnico" ,
 				"class" => 'form-control'
@@ -34,7 +39,7 @@
 
 			/**Función para Dropdown----> Lsitado a partir de consulta query**/
 			foreach ($tecnicos as $indice=>$arraytecnico) {
-			$listatecnico[$arraytecnico['id']] = $arraytecnico['nombre_rol'];
+			$listatecnico[$arraytecnico['id_rol']] = $arraytecnico['rol'];
 			// Creación de una arreglo a partir de los datos traído para el dropdown!!
 			};
 
@@ -57,10 +62,15 @@
 			echo form_input($correo);
 			echo $div_close;
 
-			/*echo $div_class;
+			echo $div_class;
+			echo form_label('Contraseña: ', 'pass');
+			echo form_password($pass);
+			echo $div_close;
+
+			echo $div_class;
 			echo form_label('Tipo de Rol: ', 'tipo_rol');
-			echo form_dropdown('tipo_rol', $listatecnico,"2");
-			echo $div_close;*/
+			echo form_dropdown('tipo_rol', $listatecnico);
+			echo $div_close;
 			
 			echo form_submit($enviar);
 			echo form_reset($limpiar);
@@ -70,22 +80,30 @@
 
 			 ?>
 		</div>
-		<div class="col-md-5 col-md-offset-1 table-responsive">
+		<div class="col-md-7 col-md-offset-1 table-responsive">
 			<table class="table table-hover table-bordered" id="tablas_estadisticas">
 				<tr>
 					<th>Nombres y Apellidos</th>
 					<th>Correo Electrónico</th>
+					<th>Rol</th>
 					<th>Acción</th>
 				</tr>
 				<?php 
-				foreach ($lista_tecnicos as $key => $array_datos_tecnico) {
-					$nombretecnico=$array_datos_tecnico['nombres_tecnico']." ".$array_datos_tecnico['apellidos_tecnico'];
-					$correo=$array_datos_tecnico['correo_tecnico'];
-					echo "<tr><td>$nombretecnico</td><td>$correo</td>
-					<td>Borrar
-						</td></tr>";
-				}
-				 ?>
+				foreach ($lista_tecnicos as $key => $array_datos_tecnico):?>
+				<?php 
+				$nombretecnico=$array_datos_tecnico['nombres_tecnico']." ".$array_datos_tecnico['apellidos_tecnico'];
+				$correo=$array_datos_tecnico['correo_tecnico'];
+				$rol=$array_datos_tecnico['rol']; 
+				?>
+					
+				<tr>
+					<td><?=$nombretecnico?></td>
+					<td><?=$correo?></td>
+					<td><?=$rol?></td>
+					<td>Borrar</td>
+				</tr>
+				
+				<?php endforeach;?>
 				
 			</table>
 		</div>

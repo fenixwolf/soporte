@@ -14,8 +14,8 @@ class Tecnicos_m extends CI_Model {
 
         }
     public function lista_roles(){		
-        $this->db->select('nombre_rol , rol_simple, id');
-        $this->db->from('tipo_rol_t');
+        $this->db->select('rol, id_rol');
+        $this->db->from('seguridad.roles_t');
         $index_tecnicos = $this->db->get(); //Obtengo los datos de la consulta
         $tecnicos = $index_tecnicos->result_array(); //Con "result_array" lo transformo en array
         return $tecnicos; //Envío los datos de la consulta
@@ -30,9 +30,10 @@ class Tecnicos_m extends CI_Model {
     	return $salida;
         }
      public function listar_tecnicos(){
-        
-        $index_tecnicos = $this->db->get("tecnicos_t"); //Obtengo los datos de la consulta
+        $this->db->join('seguridad.roles_t', 'public.tecnicos_t.rol = seguridad.roles_t.id_rol');
+        $index_tecnicos = $this->db->get('public.tecnicos_t'); //Obtengo los datos de la consulta
         $tecnicos = $index_tecnicos->result_array(); //Con "result_array" lo transformo en array
+        //echo '<pre>',print_r($tecnicos, true),'<pre>';die;
         return $tecnicos; //Envío los datos de la consulta
         //echo '<pre>',print_r($tecnicos),'</pre>';die;
      }

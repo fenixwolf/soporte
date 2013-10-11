@@ -20,6 +20,32 @@ class Seguridad extends CI_Controller {
 		$this->load->view('welcome', $data);				
 	}
 
+	//Logeo!!
+	public function login()
+	{
+		$data = array(
+			'titulo' =>'Sistema de Gestión de Incidencias' ,
+			'seccion'=>'contenido/seguridad/login_v',
+			 );
+		$this->load->view('welcome', $data);	 		
+	}
+	public function login_consulta()
+	{
+		$correo=$this->input->post('correo');
+		$pass=$this->input->post('pass');
+		$this->form_validation->set_rules('correo', 'Correo Electrónico', 'trim|required|xss_clean');
+		$this->form_validation->set_rules('pass', 'Contraseña', 'trim|required|xss_clean');	
+
+		if ($this->form_validation->run()== FALSE) {
+		 			redirect('seguridad/login');
+		 		}
+		 		else{
+		 			
+		 		}
+	}
+	//Fin Logueo
+
+
 	public function _borrado_exito(){
 		
 			$data = array(
@@ -102,6 +128,7 @@ class Seguridad extends CI_Controller {
 		redirect('seguridad/asignar_permisos_menu/'.$menu_id);
 		
 	}
+
 
 
 }
