@@ -23,27 +23,39 @@ class Seguridad extends CI_Controller {
 	//Logeo!!
 	public function login()
 	{
+
 		$data = array(
 			'titulo' =>'Sistema de Gestión de Incidencias' ,
 			'seccion'=>'contenido/seguridad/login_v',
 			 );
 		$this->load->view('welcome', $data);	 		
 	}
+
 	public function login_consulta()
 	{
+		$this->form_validation->set_rules('correo', 'Correo Electrónico', 'trim|required|xss_clean|callback__loginok');
+		$this->form_validation->set_rules('pass', 'Contraseña', 'trim|required|xss_clean');
+		//echo '<pre>',print_r($pass, true),'</pre>';die;
+		if ($this->form_validation->run() == FALSE) {
+			$this->login();	
+		}
+		else{
+			redirect('/');
+		}
+	}
+	public function _loginok($correo, $pass){
 		$correo=$this->input->post('correo');
 		$pass=$this->input->post('pass');
-		$this->form_validation->set_rules('correo', 'Correo Electrónico', 'trim|required|xss_clean');
-		$this->form_validation->set_rules('pass', 'Contraseña', 'trim|required|xss_clean');	
-
-		if ($this->form_validation->run()== FALSE) {
-		 			redirect('seguridad/login');
-		 		}
-		 		else{
-		 			
-		 		}
+		//echo '<pre>',print_r($correo),'</pre>';die;
+		return $this->libreriaseguridad->login($correo, $pass);
 	}
 	//Fin Logueo
+	public function fin_sesion(){
+		$this->session->sess_destroy();
+		redirect(base_url());
+			
+		}
+	
 
 
 	public function _borrado_exito(){

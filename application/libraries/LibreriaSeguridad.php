@@ -7,13 +7,39 @@ class LibreriaSeguridad
 	public function __construct()
 	{
         $this->ci =& get_instance();
+        $this->ci->load->model('tecnicos_m');
+        $this->ci->load->model('seguridad_m');
         
 	}
+	public function login($correo, $pass){
+
+		$query=$this->ci->tecnicos_m->get_login($correo, $pass);
+		
+		if ($query->num_rows() > 0) {
+
+			$datos = $query->row();
+
+			$datos_sesion = array(
+				'correo' => $datos->correo_tecnico,
+				'usuario_id'=> $datos->id ,
+				'rol_id'=> $datos->rol , 
+				);
+			//echo '<pre>',print_r($datos_sesion, true),'</pre>';die;
+			$this->ci->session->set_userdata($datos_sesion);
+			
+
+			return TRUE;
+		}
+		else{
+			$this->ci->session->sess_destroy();
+			return FALSE;
+			}
+		
+	}	
 
 	public function perfiles_asignados_noasignados($id){
 		$con_permiso=array();
 		$sin_permiso=array();
-		$this->ci->load->model('seguridad_m');
 		$perfiles = $this->ci->seguridad_m->listar_roles_registrados();
 
 		//echo '<pre>',print_r($perfiles, true),'</pre>';die;
@@ -22,14 +48,10 @@ class LibreriaSeguridad
 
 
 			$este_rol=$rol['id_rol'];
-			
-
 			$this->ci->db->where('id_menu =', $id);
 			$this->ci->db->where('id_rol =', $este_rol);
-			
-
 			$query = $this->ci->db->get('seguridad.roles_menu_r');
-			//echo '<pre>',print_r($query, true),'</pre>';
+			
 
 
 			$existe= ($query->num_rows() >0);
@@ -44,8 +66,16 @@ class LibreriaSeguridad
 		return array($con_permiso, $sin_permiso);
 	}
 	
-	public function login(){
 
+	function buscar_lista_menu($controlador){
+		$this->ci->db->where('controlador =', $controlador);
+		return $this->ci->db->get('seguridad.menu_t')->row();
+	}
+
+	function buscar_menu_perfil($menu_id, $rol){
+		$this->ci->db->where('id_menu =', $menu_id);
+		$this->ci->db->where('id_rol =', $rol);
+		return $this->ci->db->get('seguridad.roles_menu_r')->row();
 	}
 }
 

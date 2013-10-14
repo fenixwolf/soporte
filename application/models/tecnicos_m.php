@@ -33,9 +33,9 @@ class Tecnicos_m extends CI_Model {
         $this->db->join('seguridad.roles_t', 'public.tecnicos_t.rol = seguridad.roles_t.id_rol');
         $index_tecnicos = $this->db->get('public.tecnicos_t'); //Obtengo los datos de la consulta
         $tecnicos = $index_tecnicos->result_array(); //Con "result_array" lo transformo en array
-        //echo '<pre>',print_r($tecnicos, true),'<pre>';die;
+        
         return $tecnicos; //Envío los datos de la consulta
-        //echo '<pre>',print_r($tecnicos),'</pre>';die;
+ 
      }
      public function busqueda_tecnico_asignado($data){
         $id_tecnico=$data["tecnico_asignado"];
@@ -46,7 +46,7 @@ class Tecnicos_m extends CI_Model {
         $index_tecnicos = $this->db->get(); //Obtengo los datos de la consulta
         $tecnicos = $index_tecnicos->row_array(); //Con "result_array" lo transformo en array
         return $tecnicos; //Envío los datos de la consulta
-        //echo '<pre>',print_r($tecnicos),'</pre>';die;
+  
   
      }
      public function busqueda_departamento($data){
@@ -73,6 +73,15 @@ class Tecnicos_m extends CI_Model {
         return $tecnicos; 
         //echo '<pre>',print_r($tecnicos),'</pre>';die;
   
+     }
+     public function get_login($correo, $pass){
+        $this->db->where('correo_tecnico', $correo);
+        $this->db->where('pass', $pass);
+        //$android=$this->db->get('tecnicos_t');
+        //$arduino=$android->result_array();
+        //echo '<pre>',print_r($arduino),'</pre>';die;
+        return $this->db->get('tecnicos_t');
+     
      }                  
 	
 

@@ -36,7 +36,7 @@
 					<td>$tecnico_asignado</td>
 					<td>$tiempo_transcurrido</td>
 					<td>";			
-					echo form_open('reporte/actualizar_reporte',$form);
+					echo form_open('reportar/actualizar_reporte',$form);
 					echo form_hidden($hidden);
 					?>
 					<a href='javascript:enviar_reporte_id(<?=$id?>)' class="btn btn-small btn-primary">

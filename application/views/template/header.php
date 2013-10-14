@@ -7,12 +7,14 @@
 	<div class="col sm-1 hidden-xs hidden-md hidden-lg">
 		<img src=<?=base_url()."dist/img/SGI-logo.svg"?> alt="Logo" class="img-responsive" id="logo_sgi">
 	</div>-->
-	<div class="col-md-8">
+	<div class="col-md-7">
 		<h1> <?php echo $titulo?></h1>
+
 	</div>
 
+
 </div>
-	
+
 </header>
 
 <div class="row">
@@ -33,12 +35,30 @@
 		 <li ><a href=<?=base_url()."tecnicos";?>>Técnicos</a></li>
 		 <li ><a href=<?=base_url()."departamentos";?>>Departamentos u Oficinas</a></li>
 		 <!--<li><a href=<?=base_url()."roles";?>>Roles</a></li>-->
-		 <li ><a href=<?=base_url()."reporte";?>>Reporte</a></li>
+		 <li ><a href=<?=base_url()."reportar";?>>Reportar</a></li>
 		 <li ><a href=<?=base_url()."incidencias";?>>Incidencias</a></li>
 		 <li ><a href=<?=base_url()."estadisticas";?>>Estadisticas</a></li>
 		</ul>
+
+		<!-- Para Usuarios Logeados-->
 		<ul class="nav navbar-nav navbar-right">
-      
+		<?if ($this->session->userdata('correo') !=NULL):?>
+		<div class="btn-group  btn-sm">
+  		<a class="btn btn-default btn-sm dropdown-toggle" href="#"><i class="icon-user"></i> <?=$this->session->userdata('correo')  ?></a>
+  		<a class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown" href="">
+    	<span class="icon-caret-down"></span></a>
+  		<ul class="dropdown-menu">
+  		<li><a href="#"><i class="icon-fixed-width icon-trash"></i> Otra Acción</a></li>
+    	<li class="divider"></li>
+    	<li><a href="<?=base_url()?>seguridad/fin_sesion"><i class="icon-fixed-width icon-trash"></i> Salir</a></li>
+  		</ul>
+		</div>
+		
+		<? endif;?>
+      	<!---->
+		
+
+
       <li class="dropdown">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class='icon-lock'></i> Seguridad<b class="caret"></b></a>
         <ul class="dropdown-menu">
@@ -56,4 +76,5 @@
 
 
 	</div>
+	
 </div>

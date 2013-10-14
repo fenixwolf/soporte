@@ -4,6 +4,7 @@ class Login extends CI_Controller {
 
 	public function index()
 	{
+			
 		$data = array(
 			'titulo' =>'Sistema de Gestión de Incidencias' ,
 			'seccion'=>'contenido/seguridad/login_v',
