@@ -42,7 +42,7 @@
 					<a href='javascript:enviar_reporte_id(<?=$id?>)' class="btn btn-small btn-primary">
 						<i class='icon-cog'></i> Reportar
 					</a>
-						
+						cd
 					<?php
 					echo form_close();
 					//echo $id;
