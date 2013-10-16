@@ -46,7 +46,7 @@
 			/**/
 
 			/**FORMULARIO**/
-			echo form_open('tecnicos/registro',$form);
+			echo form_open('seguridad/registro',$form);
 			echo $div_class;
 			echo form_label('Nombres: ', 'nombres_tecnico');
 			echo form_input($nombres_tecnico);

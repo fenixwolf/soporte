@@ -32,7 +32,7 @@
 	
 		<ul class="nav navbar-nav">
 
-		 <li ><a href=<?=base_url()."tecnicos";?>>Técnicos</a></li>
+		 <!--<li ><a href=<?=base_url()."seguridad/registro_tecnico";?>>Técnicos</a></li>-->
 		 <li ><a href=<?=base_url()."departamentos";?>>Departamentos u Oficinas</a></li>
 		 <!--<li><a href=<?=base_url()."roles";?>>Roles</a></li>-->
 		 <li ><a href=<?=base_url()."reportar";?>>Reportar</a></li>
@@ -44,11 +44,11 @@
 		<ul class="nav navbar-nav navbar-right">
 		<?if ($this->session->userdata('correo') !=NULL):?>
 		<div class="btn-group  btn-sm">
-  		<a class="btn btn-default btn-sm dropdown-toggle" href="#"><i class="icon-user"></i> <?=$this->session->userdata('correo')  ?></a>
+  		<a class="btn btn-default btn-sm dropdown-toggle" href="#"><i class="icon-user"></i> <?=$this->session->userdata('correo')?></a>
   		<a class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown" href="">
     	<span class="icon-caret-down"></span></a>
   		<ul class="dropdown-menu">
-  		<li><a href="#"><i class="icon-fixed-width icon-trash"></i> Otra Acción</a></li>
+  		<li><a href="<?=base_url()?>seguridad/registro_tecnico"><i class="icon-female"></i><i class="icon-male"></i> Técnicos</a></li>
     	<li class="divider"></li>
     	<li><a href="<?=base_url()?>seguridad/fin_sesion"><i class="icon-fixed-width icon-trash"></i> Salir</a></li>
   		</ul>
