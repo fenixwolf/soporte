@@ -34,7 +34,7 @@ class Seguridad extends CI_Controller {
 	public function login_consulta()
 	{
 		$this->form_validation->set_rules('correo', 'Correo Electrónico', 'trim|required|xss_clean|callback__loginok');
-		$this->form_validation->set_rules('pass', 'Contraseña', 'trim|required|xss_clean');
+		$this->form_validation->set_rules('pass', 'Contraseña', 'trim|required|xss_clean|md5');
 		//echo '<pre>',print_r($pass, true),'</pre>';die;
 		if ($this->form_validation->run() == FALSE) {
 			$this->login();	
@@ -45,11 +45,11 @@ class Seguridad extends CI_Controller {
 	}
 	public function _loginok($correo, $pass){
 		$correo=$this->input->post('correo');
-		$pass=$this->input->post('pass');
-		//echo '<pre>',print_r($correo),'</pre>';die;
+		$pass=md5($this->input->post('pass'));
+		//echo '<pre>',print_r($pass, true),'</pre>';die;
 		return $this->libreriaseguridad->login($correo, $pass);
 	}
-	//Fin Logueo
+	//Fin Logueos
 	public function fin_sesion(){
 		$this->session->sess_destroy();
 		redirect(base_url());
@@ -163,7 +163,7 @@ class Seguridad extends CI_Controller {
 	//echo '<pre>',print_r($_POST),'</pre>';die;
 	$data = array(
 		'correo_tecnico' =>strtolower($this->input->post("correo")),
-		'pass'=>$this->input->post('pass'),
+		'pass'=>md5($this->input->post('pass')),
 		'rol'=>$this->input->post('tipo_rol'),
 		'nombres_tecnico' =>ucwords(strtolower($this->input->post("nombres_tecnico"))),
 		'apellidos_tecnico' =>ucwords(strtolower($this->input->post("apellidos_tecnico"))),

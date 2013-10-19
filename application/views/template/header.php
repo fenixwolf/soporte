@@ -32,9 +32,9 @@
 	
 		<ul class="nav navbar-nav">
 
-		 <!--<li ><a href=<?=base_url()."seguridad/registro_tecnico";?>>Técnicos</a></li>-->
+	
 		 <li ><a href=<?=base_url()."departamentos";?>>Departamentos u Oficinas</a></li>
-		 <!--<li><a href=<?=base_url()."roles";?>>Roles</a></li>-->
+		
 		 <li ><a href=<?=base_url()."reportar";?>>Reportar</a></li>
 		 <li ><a href=<?=base_url()."incidencias";?>>Incidencias</a></li>
 		 <li ><a href=<?=base_url()."estadisticas";?>>Estadisticas</a></li>

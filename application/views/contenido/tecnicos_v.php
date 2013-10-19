@@ -9,7 +9,8 @@
 				);
 			$correo = array(
 				'name' =>"correo" ,
-				"class" => 'form-control'
+				"class" => 'form-control',
+				'type'=>'email'
 				);
 			$pass = array(
 				'name' =>"pass" ,
@@ -44,7 +45,9 @@
 			};
 
 			/**/
-
+?>
+<h3>Registro de nuevos usuarios/técnicos</h3>
+<?php 			
 			/**FORMULARIO**/
 			echo form_open('seguridad/registro',$form);
 			echo $div_class;
@@ -80,7 +83,8 @@
 
 			 ?>
 		</div>
-		<div class="col-md-7 col-md-offset-1 table-responsive">
+		<div class="col-md-5 col-md-offset-1 table-responsive">
+			<h3>Listado de usuarios/tecnicos registrados</h3>
 			<table class="table table-hover table-bordered" id="tablas_estadisticas">
 				<tr>
 					<th>Nombres y Apellidos</th>
