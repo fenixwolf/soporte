@@ -3,10 +3,7 @@
 	<div class="col-md-1 hidden-xs hidden-sm">
 		<img src=<?=base_url()."dist/img/SGI-logo.svg"?> alt="Logo" class="img-responsive" id="logo_sgi">
 	</div>
-	<!--
-	<div class="col sm-1 hidden-xs hidden-md hidden-lg">
-		<img src=<?=base_url()."dist/img/SGI-logo.svg"?> alt="Logo" class="img-responsive" id="logo_sgi">
-	</div>-->
+	
 	<div class="col-md-7">
 		<h1> <?php echo $titulo?></h1>
 
@@ -41,8 +38,11 @@
 		</ul>
 
 		<!-- Para Usuarios Logeados-->
+
 		<ul class="nav navbar-nav navbar-right">
-		<?if ($this->session->userdata('correo') !=NULL):?>
+
+		<?php if ( $this->session->userdata('correo') != NULL):?>
+
 		<div class="btn-group  btn-sm">
   		<a class="btn btn-default btn-sm dropdown-toggle" href="#"><i class="icon-user"></i> <?=$this->session->userdata('correo')?></a>
   		<a class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown" href="">
@@ -54,7 +54,8 @@
   		</ul>
 		</div>
 		
-		<? endif;?>
+		<?php endif;?>
+
       	<!---->
 		
 

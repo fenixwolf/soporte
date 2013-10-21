@@ -80,7 +80,7 @@ class Tecnicos_m extends CI_Model {
         //$android=$this->db->get('tecnicos_t');
         //$arduino=$android->result_array();
         //echo '<pre>',print_r($arduino),'</pre>';die;
-        return $this->db->get('tecnicos_t');
+        return $this->db->get('public.tecnicos_t');
      
      }                  
 	
