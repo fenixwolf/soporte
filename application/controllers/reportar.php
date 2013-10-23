@@ -32,13 +32,30 @@ class Reportar extends CI_Controller {
 			'correo_solicitante'=>$this->input->post('correo_solicitante'),
 			'tipo_incidencia'=>$this->input->post('tipo_incidencia'),
 			'tecnico_asignado'=>$this->input->post('tecnico_asignado'),
-			
+			'lista_status'=>$this->reporte_m->lista_status(),
 			//'lista_tecnicos'=>$this->tecnicos_m->listar_tecnicos(),
 			//"lista_incidencias"=>$this->incidencias_m->listar_incidencias(),
 			//"lista_departamentos"=>$this->departamentos_m->listar_departamentos(),
 			 );
 			//echo '<pre>',print_r($data),'</pre>';die;
 		$this->load->view('welcome', $data);
+	}
+
+
+	//Registro de Reporte:
+
+	public function registrar_reporte(){
+		$data = array(
+			'id_incidencia' =>$this->input->post('id_seleccionado') , 
+			'estatus_incidencia'=>$this->input->post('status_incidencia'),
+			'detalles'=>$this->input->post('tipo_incidencia'),
+			);
+
+		$this->reporte_m->insertar_reporte($data);
+		$this->index();	
+	
+		
+
 	}
 
 }
