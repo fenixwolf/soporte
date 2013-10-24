@@ -5,7 +5,7 @@
 	</div>
 	
 	<div class="col-md-7">
-		<h1> <?php echo $titulo?></h1>
+		<h1> <?=$titulo?></h1>
 
 	</div>
 
