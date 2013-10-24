@@ -51,20 +51,18 @@ if (@$carga_exitosa=="si") {
 
 	$(document).ready(function() {
     setTimeout(function() {$("#alerta").fadeOut(500);},1500);
-    //$("#fecha_disabled").attr("disabled", true);
     $("select").addClass('form-control');
-    //$(".collapse").collapse();
-    
+    //$("#fecha_disabled").attr("disabled", true);    
+    //$(".collapse").collapse();    
     });
+
     $('a').click(function(){
     	//alert("alerta");
     	$('i.icon-cog').addClass('icon-spin');
-    });
-
-    
-	
+    });   	
 	jQuery(function($){
    $("#fecha").mask("99-99-9999");
+   
    //$('#monto').mask('99999,99');
   	});
 

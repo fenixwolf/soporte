@@ -15,7 +15,7 @@ class LibreriaSeguridad
 
 		$query=$this->ci->tecnicos_m->get_login($correo, $pass);
 		//$query2= $query->result_array();
-		//echo '<pre>',print_r($query, true),'</pre>';die;
+		//echo '<pre>',print_r($query2, true),'</pre>';die;
 		
 		if ($query->num_rows() > 0) {
 

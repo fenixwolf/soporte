@@ -28,13 +28,10 @@
 	<nav class="collapse navbar-collapse despliegue_navbar" role="navigation" >
 	
 		<ul class="nav navbar-nav">
-
-	
-		 <li ><a href=<?=base_url()."departamentos";?>>Departamentos u Oficinas</a></li>
+		<li ><a href=<?=base_url()."incidencias";?>>Registrar Incidencias</a></li>		
+		<li ><a href=<?=base_url()."reportar";?>>Reportar</a></li>
+		<li ><a href=<?=base_url()."estadisticas";?>>Estadisticas</a></li>
 		
-		 <li ><a href=<?=base_url()."reportar";?>>Reportar</a></li>
-		 <li ><a href=<?=base_url()."incidencias";?>>Incidencias</a></li>
-		 <li ><a href=<?=base_url()."estadisticas";?>>Estadisticas</a></li>
 		</ul>
 
 		<!-- Para Usuarios Logeados-->
@@ -48,7 +45,9 @@
   		<a class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown" href="">
     	<span class="icon-caret-down"></span></a>
   		<ul class="dropdown-menu">
+  		<li ><a href=<?=base_url()."departamentos";?>><i class="icon icon-sitemap"></i> Departamentos u Oficinas</a></li>	
   		<li><a href="<?=base_url()?>seguridad/registro_tecnico"><i class="icon-female"></i><i class="icon-male"></i> Técnicos</a></li>
+
     	<li class="divider"></li>
     	<li><a href="<?=base_url()?>seguridad/fin_sesion"><i class="icon-fixed-width icon-trash"></i> Salir</a></li>
   		</ul>

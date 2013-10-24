@@ -30,7 +30,7 @@ class Departamentos extends CI_Controller {
 		'detalles' =>$this->input->post("detalles"),
 		'direccion_departamento' =>$this->input->post("direccion_departamento"),
 		);
-	//echo '<pre>',print_r($data),'</pre>';die;
+	//echo '<pre>',print_r($data, true),'</pre>';die;
 	$registro_departamento= $this->departamentos_m->registrar_departamento($data);
 
 	if ($registro_departamento < 1) {
@@ -55,6 +55,31 @@ class Departamentos extends CI_Controller {
 			 );
 		//$data['tecnicos']=$this->tecnicos_m->lista_roles();
 		$this->load->view('welcome', $data);
+
+	}
+	public function editar(){
+		//echo '<pre>',print_r($_POST, true),'</pre>';die;
+		$data = array(
+			'id' =>$this->input->post('id') ,
+			'nombre_departamento'=>$this->input->post('nombre_departamento'),
+			'detalles'=>$this->input->post('detalles'),
+			'direccion_departamento'=>$this->input->post('direccion_departamento'),
+			'titulo' =>'Actualización de Departamento u Oficinas',
+			'seccion' =>'contenido/departamento_actualizacion_v',
+			);
+		//echo '<pre>',print_r($data, true),'</pre>';die;
+		$this->load->view('welcome', $data);
+	}
+	public function finalizar_actualizacion(){
+		$data = array(
+			'id' =>$this->input->post('id') ,
+			'nombre_departamento'=>$this->input->post('nombre_departamento'),
+			'detalles'=>$this->input->post('detalles'),
+			);
+
+		//echo '<pre>',print_r($_POST, true),'</pre>';die;
+		$this->departamentos_m->actualizar($data);
+		$this->index();
 
 	}
 

@@ -14,16 +14,16 @@
 
 				foreach ($lista_incidencias as $key => $array_lista_incidencias) {
 					//print_r($array_lista_incidencias);
-			$id=$array_lista_incidencias['incidencia_id'];
-			$departamento=$array_lista_incidencias['nombre_departamento'];
-			$correo_solicitante=$array_lista_incidencias['correo_solicitante'];
-			$tipo_incidencia=$array_lista_incidencias['tipo_incidencia'];
+				$id=$array_lista_incidencias['incidencia_id'];
+				$departamento=$array_lista_incidencias['nombre_departamento'];
+				$correo_solicitante=$array_lista_incidencias['correo_solicitante'];
+				$tipo_incidencia=$array_lista_incidencias['tipo_incidencia'];
 				$fecha_solicitud=human_to_unix($array_lista_incidencias['fecha_solicitud']);
 				$ahora=now();
-			$tiempo_transcurrido=timespan($fecha_solicitud,$ahora);
-			$tecnico_asignado=$array_lista_incidencias['nombres_tecnico']." ".$array_lista_incidencias['apellidos_tecnico'] ;
-			$form = array('id' =>'form_'.$id ,);
-			$hidden = array(
+				$tiempo_transcurrido=timespan($fecha_solicitud,$ahora);
+				$tecnico_asignado=$array_lista_incidencias['nombres_tecnico']." ".$array_lista_incidencias['apellidos_tecnico'] ;
+				$form = array('id' =>'form_'.$id ,);
+				$hidden = array(
 				'id_seleccionado' =>$id, 
 				'correo_solicitante'=>$correo_solicitante,
 				'tipo_incidencia'=>$tipo_incidencia,

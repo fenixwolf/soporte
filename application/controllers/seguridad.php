@@ -5,7 +5,7 @@ class Seguridad extends CI_Controller {
 	{
 		parent::__construct();
 		$this->load->model('seguridad_m');
-		$this->load->library('LibreriaSeguridad');
+		
 	}
 
 	public function index(){
@@ -33,9 +33,10 @@ class Seguridad extends CI_Controller {
 
 	public function login_consulta()
 	{
+
 		$this->form_validation->set_rules('correo', 'Correo Electrónico', 'trim|required|xss_clean|callback__loginok');
 		$this->form_validation->set_rules('pass', 'Contraseña', 'trim|required|xss_clean');
-		//echo '<pre>',print_r($pass, true),'</pre>';die;
+		//echo '<pre>',print_r($_POST),'</pre>';die;
 		if ($this->form_validation->run() == FALSE) {
 			$this->login();	
 		}

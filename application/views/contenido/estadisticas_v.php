@@ -100,7 +100,7 @@
 			echo form_open('estadisticas/por_mes',$form);
 			echo $form_group;
 			echo form_label('Busqueda por mes: ',"filtro_mes");
-			echo form_dropdown('filtro_mes', $meses,mdate("%m",now()));
+			echo form_dropdown('filtro_mes', $meses, mdate("%m",now()));
 			echo form_submit($submit);
 			echo $form_group_close;
 		
