@@ -1,5 +1,3 @@
-<?//='<pre>',print_r($listar_permisos, true),'</pre>';die; ?>
-
 <h3>Permisos Asignados</h3>
 <div class="col-md-10 col-offset-1">
 

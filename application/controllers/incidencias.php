@@ -61,7 +61,7 @@ class Incidencias extends CI_Controller {
 		$asunto="Solicitud de Soporte Técnico al usuario $usuario_solicitante";
 		$fecha_ahora=time();
 
-		$mensaje_correo = "Se ha recibido una solicitud de Soporte Técnico con un incidente relacionado con $incidente_reportado \r\ndesde el correo $usuario_solicitante , el mismo será atendido a la brevedad posible.\r\nGracias por contactarnos";
+		$mensaje_correo ="Se ha recibido desde su correo una solicitud de soporte técnico con un incidente relacionado con $incidente_reportado, el mismo será atendido a la brevedad posible.\nGracias por contactarnos.\nSistema de Seguimiento a Incidencias y Soporte Técnico S.I.G";
 		//echo '<pre>',print_r($data),'</pre>';die;
 		$this->load->library('email');
 		$this->email->from($remitente);
@@ -99,7 +99,7 @@ class Incidencias extends CI_Controller {
 		$tecnico = $tecnico_asignado['nombres_tecnico']." ".$tecnico_asignado['apellidos_tecnico'];
 		$departamento = $departamento_solicitante['nombre_departamento'];	
 		$incidente_reportado=$data['detalles'];
-		$mensaje_correo="Se le informa que ha sido asignado a un nuevo servicio técnico del usuario $usuario_solicitante en la oficina $departamento, con los siguientes detalles: $incidente_reportado, su técnico asignado es $tecnico";
+		$mensaje_correo="Se le informa que ha sido asignado a un nuevo servicio técnico del usuario $usuario_solicitante en la oficina $departamento, con los siguientes detalles: $incidente_reportado.\nRecuerde reportarlo una vez culminado el servicio.\nSistema de Seguimiento a Incidencias S.I.G";
 		//*FUNCION BUSCAR NOMBRE DEL TÉCNICO*///
 
 		

@@ -62,12 +62,7 @@
 			$dropdown_departamento[$arraydepartamento['id']] = $arraydepartamento['nombre_departamento'];
 			};
 			
-
-		
-
-			
-
-			/**/
+/**/
 
 			/**FORMULARIO**/
 			echo form_open('incidencias/registro',$form);
