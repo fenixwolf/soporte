@@ -49,6 +49,7 @@ $active_group = 'default';
 $active_record = TRUE;
 
 $db['default']['hostname'] = 'localhost';
+//$db['default']['hostname'] = '10.8.0.1';
 $db['default']['username'] = 'soporte';
 $db['default']['password'] = 'soporte2013';
 $db['default']['database'] = 'soporte';
