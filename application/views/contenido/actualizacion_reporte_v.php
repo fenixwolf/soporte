@@ -37,6 +37,12 @@
 		'class'=>'form-control',
 		'readonly'=>'readonly'
 		);
+	$detalles_resolucion = array(
+		'id'=>'detalles_resolucion',
+		'name'=>'detalles_resolucion',
+		'class'=>'form-control',		
+		
+		);
 
 	$submit = array(
 		'class' =>'btn btn-primary' ,
@@ -82,6 +88,11 @@
 	echo $form_group;	
 	echo form_label('Estatus Incidencia', 'status_incidencia');
 	echo form_dropdown('status_incidencia', $listastatus, '1');
+	echo $form_group_close;
+
+	echo $form_group;	
+	echo form_label('Detalles de la resolución', 'detalles_resolucion');
+	echo form_textarea($detalles_resolucion);	
 	echo $form_group_close;
 
 	echo form_submit($submit);

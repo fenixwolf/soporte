@@ -49,6 +49,7 @@ class Reportar extends CI_Controller {
 			'id_incidencia' =>$this->input->post('id_seleccionado') , 
 			'estatus_incidencia'=>$this->input->post('status_incidencia'),
 			'detalles'=>$this->input->post('tipo_incidencia'),
+			'detalles_resolucion'=>$this->input->post('detalles_resolucion'),
 			);
 
 		$this->reporte_m->insertar_reporte($data);
