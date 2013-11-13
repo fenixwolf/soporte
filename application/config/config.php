@@ -14,7 +14,7 @@
 | path to your installation.
 |
 */
-$config['base_url']	= 'http://localhost/soporte/';
+$config['base_url']	= 'http://fenixw.no-ip.org:8080/soporte/';
 
 /*
 |--------------------------------------------------------------------------
