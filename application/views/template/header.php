@@ -1,7 +1,7 @@
-<header id='<?="header".rand(1,6)?>'>
+<header id='<?="header3"/*.rand(1,6)*/?>'>
 <div class="row">
 	<div class="col-md-1 hidden-xs hidden-sm">
-		<img src=<?=base_url()."dist/img/SGI-logo.svg"?> alt="Logo" class="img-responsive" id="logo_sgi">
+		<img src=<?=base_url()."dist/img/SGI-logo.png"?> alt="Logo" class="img-responsive" id="logo_sgi">
 	</div>
 	
 	<div class="col-md-7">
